@@ -4,7 +4,7 @@
     COP 3330
 
     This java class is designed to take in
-    a string of numbers and encrypt them
+    a string of numbers and decrypt them
     according to a specific algorithm set
     out by the assignment.
  */
