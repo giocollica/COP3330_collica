@@ -17,8 +17,8 @@ public class Decrypter {
     int [] decryptedNumArray;
 
     //main function to decrypt the given string
-    public String decrypt(String number){
-        this.encryptedNumString = number;
+    public String decrypt(String inputNum){
+        this.encryptedNumString = inputNum;
 
         encryptedNumArray = convertToArray(encryptedNumString);
         decryptedNumArray = swapDigits(encryptedNumArray);
@@ -30,33 +30,33 @@ public class Decrypter {
 
     //function to convert the integer array into a string
     public String convertToString(int[] decryptedNumbers){
-        String Number = "";
+        String numString = "";
         int size = decryptedNumbers.length;
-        char[] numbers = new char[decryptedNumbers.length];
+        char[] charNumbers = new char[decryptedNumbers.length];
 
         for(int i = 0; i < size; i++){
-            numbers[i] = Character.forDigit((decryptedNumbers[i]), 10);
+            charNumbers[i] = Character.forDigit((decryptedNumbers[i]), 10);
         }
 
         for(int j = 0; j < size; j++){
-            Number += String.valueOf(numbers[j]);
+            numString += String.valueOf(charNumbers[j]);
         }
 
-        return Number;
+        return numString;
     }
 
     //function to convert the string into an integer array
     public int[] convertToArray(String numberToDecrypt){
-        char[] numbers = new char[numberToDecrypt.length()];
+        char[] charNumbers = new char[numberToDecrypt.length()];
         int size = numberToDecrypt.length();
         int [] numArray = new int [size];
 
         for(int i = 0; i < size; i++){
-            numbers[i] = numberToDecrypt.charAt(i);
+            charNumbers[i] = numberToDecrypt.charAt(i);
         }
 
         for(int j = 0; j < size; j++){
-            numArray[j] = Character.getNumericValue(numbers[j]);
+            numArray[j] = Character.getNumericValue(charNumbers[j]);
         }
 
         return numArray;
