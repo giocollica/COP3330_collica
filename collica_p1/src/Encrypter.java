@@ -17,8 +17,8 @@ public class Encrypter {
     int [] encryptedNumArray;
 
     //main function to encrypt the string
-    public String encrypt(String number){
-        this.originalNumString = number;
+    public String encrypt(String inputNum){
+        this.originalNumString = inputNum;
 
         originalNumArray = convertToArray(originalNumString);
         encryptedNumArray = addSeven(originalNumArray);
@@ -32,35 +32,35 @@ public class Encrypter {
 
     //function to convert the integer array into a string
     public String convertToString(int[] encryptedNumbers){
-        String Number = "";
+        String numString = "";
         int size = encryptedNumbers.length;
-        char[] numbers = new char[encryptedNumbers.length];
+        char[] charNumbers = new char[encryptedNumbers.length];
 
         //convert integer array into char array
         for(int i = 0; i < size; i++){
-            numbers[i] = Character.forDigit((encryptedNumbers[i]), 10);
+            charNumbers[i] = Character.forDigit((encryptedNumbers[i]), 10);
         }
 
         //convert char array into string
         for(int j = 0; j < size; j++){
-            Number += String.valueOf(numbers[j]);
+            numString += String.valueOf(charNumbers[j]);
         }
 
-        return Number;
+        return numString;
     }
 
     //function to convert the string into an integer array
     public int[] convertToArray(String numberToEncrypt){
-        char[] numbers = new char[numberToEncrypt.length()];
+        char[] charNumbers = new char[numberToEncrypt.length()];
         int size = numberToEncrypt.length();
         int [] numArray = new int [size];
 
         for(int i = 0; i < size; i++){
-            numbers[i] = numberToEncrypt.charAt(i);
+            charNumbers[i] = numberToEncrypt.charAt(i);
         }
 
         for(int j = 0; j < size; j++){
-            numArray[j] = Character.getNumericValue(numbers[j]);
+            numArray[j] = Character.getNumericValue(charNumbers[j]);
         }
 
         return numArray;
