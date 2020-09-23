@@ -1,6 +1,12 @@
 public class BodyMassIndex {
-    private int height;
-    private int weight;
+    private double height;
+    private double weight;
+
+    public BodyMassIndex(double height, double weight){
+        this.height = height;
+        this.weight = weight;
+    }
+
 
     public int calculateBmiNumber(){
 
