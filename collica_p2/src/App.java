@@ -32,7 +32,10 @@ public class App {
     }
 
     private static double getUserWeight() {
-
+        System.out.println("Enter your weight in pounds: ");
+        Scanner input = new Scanner(System.in);
+        double weight = input.nextDouble();
+        return weight;
     }
 
 
