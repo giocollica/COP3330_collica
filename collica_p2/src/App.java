@@ -25,6 +25,10 @@ public class App {
     }
 
     private static double getUserHeight() {
+        System.out.println("Enter your height in inches: ");
+        Scanner input = new Scanner(System.in);
+        double height = input.nextDouble();
+        return height;
     }
 
     private static double getUserWeight() {
@@ -34,9 +38,8 @@ public class App {
 
     public static boolean moreInput(){
         System.out.println("Do you want to calculate another BMI?");
-        System.out.println("Enter Y for yes, or N for no:");
+        System.out.println("Enter Y for yes, or N for no: ");
         Scanner input = new Scanner(System.in);
-        input.nextLine();
         String yesOrNo = input.nextLine();
         if(yesOrNo.equals("Y")) {
             return true;
