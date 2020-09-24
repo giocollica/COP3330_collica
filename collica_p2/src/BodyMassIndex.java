@@ -8,6 +8,7 @@ public class BodyMassIndex {
         this.height = height;
         this.weight = weight;
         this.bmi = calculateBmiNumber();
+        this.bmiCategory = calculateBmiCategory();
 
 
     }
@@ -18,7 +19,7 @@ public class BodyMassIndex {
         return bmi;
     }
 
-    public void calculateBmiCategory(double bmi){
+    public String calculateBmiCategory(){
         String bmiCategory = null;
         if(bmi < 18.5){
             bmiCategory = "Underweight";
@@ -29,6 +30,7 @@ public class BodyMassIndex {
         } else {
             bmiCategory = "Obese";
         }
+        return bmiCategory;
     }
 
 }
