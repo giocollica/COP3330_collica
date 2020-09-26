@@ -33,4 +33,24 @@ public class BodyMassIndex {
         return bmiCategory;
     }
 
+    public double getWeight(){
+        double weight = this.weight;
+        return weight;
+    }
+
+    public double getHeight(){
+        double height = this.height;
+        return height;
+    }
+
+    public double getBmi(){
+        double bmi = this.bmi;
+        return bmi;
+    }
+
+    public String getBmiCategory(){
+        String bmiCat = this.bmiCategory;
+        return bmiCat;
+    }
+
 }
