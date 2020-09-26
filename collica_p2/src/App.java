@@ -19,13 +19,23 @@ public class App {
     }
 
     private static void displayBmiStatistics(ArrayList<BodyMassIndex> bmiData) {
+        double sum = 0;
+        double average = 0;
+        for(int i = 0; i < bmiData.size(); i++){
+            sum += bmiData.get(i).getBmi();
+        }
+
+        average = sum / bmiData.size();
+
+        System.out.printf("\n\nThe average BMI of all users was %.2f", average);
+
     }
 
+
+
     private static void displayBmiInfo(BodyMassIndex bmi) {
-        System.out.printf("Height:   %.2f inches\n", bmi.getHeight());
-        System.out.printf("Weight:   %.2f pounds\n", bmi.getWeight());
-        System.out.printf("BMI:      %.2f\n", bmi.getBmi());
-        System.out.print("Category: " + bmi.getBmiCategory() + "\n\n");
+        System.out.printf("BMI:     %.2f\n", bmi.getBmi());
+        System.out.print("Category: " + bmi.calculateBmiCategory(bmi.getBmi()) + "\n\n");
     }
 
     private static double getUserHeight() {
