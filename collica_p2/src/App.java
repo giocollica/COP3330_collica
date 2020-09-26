@@ -22,6 +22,10 @@ public class App {
     }
 
     private static void displayBmiInfo(BodyMassIndex bmi) {
+        System.out.printf("Height:   %.2f inches\n", bmi.getHeight());
+        System.out.printf("Weight:   %.2f pounds\n", bmi.getWeight());
+        System.out.printf("BMI:      %.2f\n", bmi.getBmi());
+        System.out.print("Category: " + bmi.getBmiCategory() + "\n\n");
     }
 
     private static double getUserHeight() {
@@ -40,17 +44,18 @@ public class App {
 
 
     public static boolean moreInput(){
-        System.out.println("Do you want to calculate another BMI?");
-        System.out.println("Enter Y for yes, or N for no: ");
-        Scanner input = new Scanner(System.in);
-        String yesOrNo = input.nextLine();
-        if(yesOrNo.equals("Y")) {
-            return true;
-        } else if(yesOrNo.equals("N")) {
-            return false;
-        } else {
-            System.out.println("Input not recognized");
-            return false;
+        while(true) {
+            System.out.println("Do you want to calculate another BMI?");
+            System.out.println("Enter Y for yes, or N for no: ");
+            Scanner input = new Scanner(System.in);
+            String yesOrNo = input.nextLine();
+            if (yesOrNo.equals("Y") || yesOrNo.equals("y")) {
+                return true;
+            } else if (yesOrNo.equals("N") || yesOrNo.equals("n")) {
+                return false;
+            } else {
+                System.out.println("Input not recognized");
+            }
         }
     }
 
