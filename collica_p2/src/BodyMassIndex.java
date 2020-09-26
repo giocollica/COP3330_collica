@@ -1,25 +1,18 @@
 public class BodyMassIndex {
-    private double height;
-    private double weight;
+
     private double bmi;
-    private String bmiCategory;
+
 
     public BodyMassIndex(double height, double weight){
-        this.height = height;
-        this.weight = weight;
-        this.bmi = calculateBmiNumber();
-        this.bmiCategory = calculateBmiCategory();
-
-
+        this.bmi = calculateBmiNumber(height, weight);
     }
 
 
-    public double calculateBmiNumber(){
-        double bmi = ((703 * weight) / (height * height));
-        return bmi;
+    public double calculateBmiNumber(double height, double weight){
+        return ((703 * weight) / (height * height));
     }
 
-    public String calculateBmiCategory(){
+    public String calculateBmiCategory(double bmi){
         String bmiCategory = null;
         if(bmi < 18.5){
             bmiCategory = "Underweight";
@@ -33,24 +26,11 @@ public class BodyMassIndex {
         return bmiCategory;
     }
 
-    public double getWeight(){
-        double weight = this.weight;
-        return weight;
-    }
-
-    public double getHeight(){
-        double height = this.height;
-        return height;
-    }
-
     public double getBmi(){
         double bmi = this.bmi;
         return bmi;
     }
 
-    public String getBmiCategory(){
-        String bmiCat = this.bmiCategory;
-        return bmiCat;
-    }
+
 
 }
