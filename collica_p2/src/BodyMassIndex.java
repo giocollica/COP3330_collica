@@ -17,7 +17,7 @@ public class BodyMassIndex {
         if(bmi < 18.5){
             bmiCategory = "Underweight";
         } else if(bmi >= 18.5 && bmi < 25){
-            bmiCategory = "Normal weight";
+            bmiCategory = "Normal Weight";
         } else if(bmi >= 25 && bmi < 30){
             bmiCategory = "Overweight";
         } else {
