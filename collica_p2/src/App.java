@@ -1,7 +1,22 @@
+/*
+    Giovanni Collica
+    Programming Assignment 2
+    COP 3330
+
+    This java class is designed to be
+    the main app class. It uses the
+    BodyMassIndex class to calculate
+    and display a users BMI and BMI
+    Category by taking input from the
+    user of their height and weight
+ */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//main app class
 public class App {
+    //main method
     public static void main(String[] args) {
         ArrayList<BodyMassIndex> bmiData = new ArrayList<BodyMassIndex>();
 
@@ -18,6 +33,7 @@ public class App {
         displayBmiStatistics(bmiData);
     }
 
+    //method to display the average bmi of all users
     private static void displayBmiStatistics(ArrayList<BodyMassIndex> bmiData) {
         double sum = 0;
         double average = 0;
@@ -32,12 +48,13 @@ public class App {
     }
 
 
-
+    //method to display bmi info for each user
     private static void displayBmiInfo(BodyMassIndex bmi) {
         System.out.printf("BMI:     %.2f\n", bmi.getBmi());
         System.out.print("Category: " + bmi.calculateBmiCategory(bmi.getBmi()) + "\n\n");
     }
 
+    //method to get the height of the user
     private static double getUserHeight() {
         System.out.println("Enter your height in inches: ");
         Scanner input = new Scanner(System.in);
@@ -45,6 +62,7 @@ public class App {
         return height;
     }
 
+    //method to get the weight of the user
     private static double getUserWeight() {
         System.out.println("Enter your weight in pounds: ");
         Scanner input = new Scanner(System.in);
@@ -52,7 +70,7 @@ public class App {
         return weight;
     }
 
-
+    //method to read whether the user wants to calculate another BMI
     public static boolean moreInput(){
         while(true) {
             System.out.println("Do you want to calculate another BMI?");
