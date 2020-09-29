@@ -51,32 +51,40 @@ public class App {
     //method to display bmi info for each user
     private static void displayBmiInfo(BodyMassIndex bmi) {
         System.out.printf("BMI:     %.2f\n", bmi.getBmi());
-        System.out.print("Category: " + bmi.calculateBmiCategory(bmi.getBmi()) + "\n\n");
+        System.out.print("Category: " + bmi.getBmiCategory() + "\n\n");
     }
 
     //method to get the height of the user
     private static double getUserHeight() {
-        System.out.println("Enter your height in inches: ");
-        Scanner input = new Scanner(System.in);
-        double height = input.nextDouble();
+        double height = 0;
+        while(height <= 0) {
+            System.out.println("Enter your height in inches: ");
+            Scanner input = new Scanner(System.in);
+            height = input.nextDouble();
+        }
         return height;
     }
 
     //method to get the weight of the user
     private static double getUserWeight() {
-        System.out.println("Enter your weight in pounds: ");
-        Scanner input = new Scanner(System.in);
-        double weight = input.nextDouble();
+        double weight = 0;
+        while(weight <= 0) {
+            System.out.println("Enter your weight in pounds: ");
+            Scanner input = new Scanner(System.in);
+            weight = input.nextDouble();
+        }
         return weight;
     }
 
     //method to read whether the user wants to calculate another BMI
     public static boolean moreInput(){
+        Scanner input = new Scanner(System.in);
         while(true) {
             System.out.println("Do you want to calculate another BMI?");
             System.out.println("Enter Y for yes, or N for no: ");
-            Scanner input = new Scanner(System.in);
+
             String yesOrNo = input.nextLine();
+
             if (yesOrNo.equals("Y") || yesOrNo.equals("y")) {
                 return true;
             } else if (yesOrNo.equals("N") || yesOrNo.equals("n")) {
