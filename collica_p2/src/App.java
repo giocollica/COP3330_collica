@@ -47,7 +47,6 @@ public class App {
 
     }
 
-
     //method to display bmi info for each user
     private static void displayBmiInfo(BodyMassIndex bmi) {
         System.out.printf("BMI:     %.2f\n", bmi.getBmi());
@@ -94,7 +93,5 @@ public class App {
             }
         }
     }
-
-
 
 }
