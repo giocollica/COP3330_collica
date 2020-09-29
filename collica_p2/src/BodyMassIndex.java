@@ -16,10 +16,12 @@
 public class BodyMassIndex {
     //instance variable
     private double bmi;
+    private String bmiCategory;
 
     //constructor
     public BodyMassIndex(double height, double weight){
         this.bmi = calculateBmiNumber(height, weight);
+        this.bmiCategory = calculateBmiCategory(bmi);
     }
 
     //calculate the BMI
@@ -46,6 +48,11 @@ public class BodyMassIndex {
     public double getBmi(){
         double bmi = this.bmi;
         return bmi;
+    }
+
+    public String getBmiCategory(){
+        String bmiCategory = this.bmiCategory;
+        return bmiCategory;
     }
 
 }
