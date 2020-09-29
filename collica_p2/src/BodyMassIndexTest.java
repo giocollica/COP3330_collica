@@ -28,6 +28,16 @@ public class BodyMassIndexTest {
         assertEquals(22.955102040816328, answer);
     }
 
+    @Test
+    public void testGetBmiCategory(){
+        int height = 70;
+        int weight = 160;
+        BodyMassIndex bmi = new BodyMassIndex(height, weight);
+        String answer = bmi.getBmiCategory();
+
+        assertEquals("Normal Weight", answer);
+    }
+
     //Test for calculateBmiNumber method
     @Test
     public void testCalculateBmiNumber(){
