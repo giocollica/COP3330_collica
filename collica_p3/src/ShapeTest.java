@@ -4,19 +4,19 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShapeTest {
     @Test
     public void testSquareName(){
-        Shape shape = new Sqaure(10);
+        Shape shape = new Square(10);
         assertEquals("square", shape.getName());
     }
 
     @Test
     public void testSquareArea(){
-        Shape2D shape = new Sqaure(10);
+        Shape2D shape = new Square(10);
         assertEquals(100, shape.getArea());
     }
 
     @Test
     public void testSquareArea(){
-        Shape2D shape = new Sqaure(.5);
+        Shape2D shape = new Square(.5);
         assertEquals(.25, shape.getArea());
     }
 
