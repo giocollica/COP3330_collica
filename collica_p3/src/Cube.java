@@ -18,10 +18,18 @@ public class Cube extends Shape3D{
     }
 
     public double getArea() {
-        return 0;
+        double sideLength = getSideLength();
+        double area;
+        area = 6 * (sideLength * sideLength);
+
+        return area;
     }
 
     public double getVolume() {
-        return 0;
+        double sideLength = getSideLength();
+        double volume;
+        volume = (sideLength * sideLength * sideLength);
+
+        return volume;
     }
 }

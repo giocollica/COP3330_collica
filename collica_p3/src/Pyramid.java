@@ -32,10 +32,23 @@ public class Pyramid extends Shape3D{
     }
 
     public double getArea() {
-        return 0;
+        double length = getLength();
+        double width = getWidth();
+        double height = getHeight();
+        double area;
+        area = (length * width) + (length * Math.sqrt(Math.pow(width / 2, 2) +
+                Math.pow(height, 2))) + (width * Math.sqrt(Math.pow(length / 2, 2) + Math.pow(height, 2)));
+
+        return area;
     }
 
     public double getVolume() {
-        return 0;
+        double length = getLength();
+        double width = getWidth();
+        double height = getHeight();
+        double volume;
+        volume = (length * width * height) / 3;
+
+        return volume;
     }
 }
