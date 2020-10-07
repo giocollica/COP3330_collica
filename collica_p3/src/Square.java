@@ -18,6 +18,10 @@ public class Square extends Shape2D {
     }
 
     public double getArea() {
-        return 0;
+        double area;
+        double sideLength = getSideLength();
+        area = sideLength * sideLength;
+
+        return area;
     }
 }

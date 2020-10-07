@@ -18,6 +18,10 @@ public class Circle extends Shape2D{
     }
 
     public double getArea() {
-        return 0;
+        double area;
+        double radius = getRadius();
+        area = Math.PI * (radius * radius);
+
+        return area;
     }
 }

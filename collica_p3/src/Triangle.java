@@ -19,7 +19,17 @@ public class Triangle extends Shape2D {
         return base;
     }
 
+    public double getHeight(){
+        double height = this.height;
+        return height;
+    }
+
     public double getArea() {
-        return 0;
+        double area;
+        double base = getBase();
+        double height = getHeight();
+        area = (1/2) * (base * height);
+
+        return area;
     }
 }
