@@ -15,7 +15,7 @@ class ShapeTest {
     }
 
     @Test
-    public void testSquareArea(){
+    public void testSquareArea2(){
         Shape2D shape = new Square(.5);
         assertEquals(.25, shape.getArea());
     }
@@ -141,7 +141,7 @@ class ShapeTest {
     }
 
     @Test
-    public void testSphereVolume(){
+    public void testSphereVolume2(){
         Shape3D shape = new Sphere(0.6);
         assertEquals(0.9, shape.getVolume(), 0.01);
     }
