@@ -1,5 +1,7 @@
-public class Shape2D extends Shape {
-    public double getArea(){
+public abstract class Shape2D extends Shape {
+
+    /*
+    {
         String shape = getName();
         if(shape == "square"){
             double area;
@@ -24,5 +26,6 @@ public class Shape2D extends Shape {
             return 0;
         }
     }
+    */
 
 }
