@@ -39,4 +39,39 @@ public class Shape {
         this.name = "Sphere";
         this.radius = radius;
     }
+
+    public String getName(){
+        String name = this.name;
+        return name;
+    }
+
+    public double getSideLength(){
+        double sideLength = this.sideLength;
+        return sideLength;
+    }
+
+    public double getBase(){
+        double base = this.base;
+        return base;
+    }
+
+    public double getLength(){
+        double length = this.length;
+        return length;
+    }
+
+    public double getHeight(){
+        double height = this.height;
+        return height;
+    }
+
+    public double getRadius(){
+        double radius = this.radius;
+        return radius;
+    }
+
+    public double getWidth(){
+        double width = this.width;
+        return width;
+    }
 }
