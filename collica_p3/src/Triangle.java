@@ -28,7 +28,7 @@ public class Triangle extends Shape2D {
         double area;
         double base = getBase();
         double height = getHeight();
-        area = (1/2) * (base * height);
+        area = (0.5) * (base * height);
 
         return area;
     }
