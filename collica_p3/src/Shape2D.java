@@ -1,2 +1,2 @@
-public class Shape2D {
+public class Shape2D extends Shape {
 }

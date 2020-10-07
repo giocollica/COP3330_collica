@@ -40,7 +40,7 @@ class ShapeTest {
 
     @Test
     public void testCircleName(){
-        Shape shape = new Cricle(10);
+        Shape shape = new Circle(10);
         assertEquals("circle", shape.getName());
     }
 
