@@ -19,6 +19,7 @@ public class Square extends Shape2D {
     }
 
     //gets the name
+    @Override
     public String getName(){
         String name = this.name;
         return name;
@@ -31,6 +32,7 @@ public class Square extends Shape2D {
     }
 
     //calculates the area and returns the value
+    @Override
     public double getArea() {
         double area;
         double sideLength = getSideLength();

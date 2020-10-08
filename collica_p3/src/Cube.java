@@ -19,6 +19,7 @@ public class Cube extends Shape3D{
     }
 
     //gets the name
+    @Override
     public String getName(){
         String name = this.name;
         return name;
@@ -31,6 +32,7 @@ public class Cube extends Shape3D{
     }
 
     //calculates the area and returns the value
+    @Override
     public double getArea() {
         double sideLength = getSideLength();
         double area;
@@ -40,6 +42,7 @@ public class Cube extends Shape3D{
     }
 
     //calculates the volume and returns the value
+    @Override
     public double getVolume() {
         double sideLength = getSideLength();
         double volume;

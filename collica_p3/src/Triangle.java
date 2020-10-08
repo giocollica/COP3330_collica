@@ -21,6 +21,7 @@ public class Triangle extends Shape2D {
     }
 
     //gets the name
+    @Override
     public String getName() {
         String name = this.name;
         return name;
@@ -39,6 +40,7 @@ public class Triangle extends Shape2D {
     }
 
     //calculates area and returns the value
+    @Override
     public double getArea() {
         double area;
         double base = getBase();

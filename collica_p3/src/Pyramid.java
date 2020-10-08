@@ -23,6 +23,7 @@ public class Pyramid extends Shape3D{
     }
 
     //gets the name
+    @Override
     public String getName(){
         String name = this.name;
         return name;
@@ -47,6 +48,7 @@ public class Pyramid extends Shape3D{
     }
 
     //calculates the area and returns the value
+    @Override
     public double getArea() {
         double length = getLength();
         double width = getWidth();
@@ -59,6 +61,7 @@ public class Pyramid extends Shape3D{
     }
 
     //calculates the volume and returns the value
+    @Override
     public double getVolume() {
         double length = getLength();
         double width = getWidth();
