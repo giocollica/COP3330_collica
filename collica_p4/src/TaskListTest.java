@@ -3,113 +3,113 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TaskListTest {
     @Test
-    addingTaskItemsIncreasesSize(){
+    public void addingTaskItemsIncreasesSize(){
 
     }
 
     @Test
-    completingTaskItemChangesStatus(){
+    public void completingTaskItemChangesStatus(){
 
     }
 
     @Test
-    completingTaskItemFailsWithInvalidIndex(){
+    public void completingTaskItemFailsWithInvalidIndex(){
 
     }
 
     @Test
-    editingTaskItemChangesValues(){
+    public void editingTaskItemChangesValues(){
 
     }
 
     @Test
-    editingTaskItemDescriptionChangesValue(){
+    public void editingTaskItemDescriptionChangesValue(){
 
     }
 
     @Test
-    editingTaskItemDescriptionFailsWithInvalidIndex(){
+    public void editingTaskItemDescriptionFailsWithInvalidIndex(){
 
     }
 
     @Test
-    editingTaskItemDueDateChangesValue(){
+    public void editingTaskItemDueDateChangesValue(){
 
     }
 
     @Test
-    editingTaskItemDueDateFailsWithInvalidIndex(){
+    public void editingTaskItemDueDateFailsWithInvalidIndex(){
 
     }
 
     @Test
-    editingTaskItemTitleChangesValue(){
+    public void editingTaskItemTitleChangesValue(){
 
     }
 
     @Test
-    editingTaskItemTitleFailsWithInvalidIndex(){
+    public void editingTaskItemTitleFailsWithInvalidIndex(){
 
     }
 
     @Test
-    gettingTaskItemDescriptionFailsWithInvalidIndex(){
+    public void gettingTaskItemDescriptionFailsWithInvalidIndex(){
 
     }
 
     @Test
-    gettingTaskItemDescriptionSucceedsWithValidIndex(){
+    public void gettingTaskItemDescriptionSucceedsWithValidIndex(){
 
     }
 
     @Test
-    gettingTaskItemDueDateFailsWithInvalidIndex(){
+    public void gettingTaskItemDueDateFailsWithInvalidIndex(){
 
     }
 
     @Test
-    gettingTaskItemDueDateSucceedsWithValidIndex(){
+    public void gettingTaskItemDueDateSucceedsWithValidIndex(){
 
     }
 
     @Test
-    gettingTaskItemTitleFailsWithInvalidIndex(){
+    public void gettingTaskItemTitleFailsWithInvalidIndex(){
 
     }
 
     @Test
-    gettingTaskItemTitleSucceedsWithValidIndex(){
+    public void gettingTaskItemTitleSucceedsWithValidIndex(){
 
     }
 
     @Test
-    newTaskListIsEmpty(){
+    public void newTaskListIsEmpty(){
 
     }
 
     @Test
-    removingTaskItemsDecreasesSize(){
+    public void removingTaskItemsDecreasesSize(){
 
     }
 
     @Test
-    removingTaskItemsFailsWithInvalidIndex(){
+    public void removingTaskItemsFailsWithInvalidIndex(){
 
     }
 
     @Test
-    savedTaskListCanBeLoaded(){
+    public void savedTaskListCanBeLoaded(){
 
     }
 
     @Test
-    uncompletingTaskItemChangesStatus(){
+    public void uncompletingTaskItemChangesStatus(){
 
     }
 
     @Test
-    uncompletingTaskItemFailsWithInvalidIndex(){
-        
+    public void uncompletingTaskItemFailsWithInvalidIndex(){
+
     }
 
 }
