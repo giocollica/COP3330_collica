@@ -2,7 +2,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TaskList {
-    private ArrayList<TaskItem> TaskList = new ArrayList<>();
+    private ArrayList<TaskItem> taskItemList = new ArrayList<>();
+
+    public TaskList(ArrayList<TaskItem> taskItemList){
+        this.taskItemList = taskItemList;
+    }
 
     public void addItem(){
         Scanner input = new Scanner(System.in);
@@ -20,6 +24,6 @@ public class TaskList {
         String newDueDate = input.next();
         newItem.setDueDate(newDueDate);
 
-        this.TaskList.add(newItem);
+        this.taskItemList.add(newItem);
     }
 }
