@@ -14,11 +14,11 @@ public class TaskList {
                                             00, 00, false);
 
         System.out.print("Task title: ");
-        String newTitle = input.next();
+        String newTitle = input.nextLine();
         newItem.setTitle(newTitle);
 
         System.out.print("Task description: ");
-        String newDescription = input.next();
+        String newDescription = input.nextLine();
         newItem.setDescription(newDescription);
 
         System.out.print("Task due date year (YYYY): ");

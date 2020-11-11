@@ -1,11 +1,32 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args){
         printMainMenu();
-        printOperationMenu();
-        TaskList mainList = createNewList();
+
+        Scanner input = new Scanner(System.in);
+        int choice = -1;
+
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList mainList = new TaskList(taskItemList);
+
+        while(choice < 1 || choice > 3){
+            String choiceString = input.next();
+            choice = Integer.parseInt(choiceString);
+
+            if(choice == 1){
+                mainList = createNewList();
+            }else if(choice == 2){
+                mainList = loadExistingList();
+            }else if(choice == 3){
+                System.exit(0);
+            }else{
+                System.out.println("Invalid input Try again");
+                printMainMenu();
+            }
+        }
 
         mainList.addItem();
 
@@ -21,6 +42,12 @@ public class App {
     }
 
     public static TaskList createNewList(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newList = new TaskList(taskItemList);
+        return newList;
+    }
+
+    public static TaskList loadExistingList(){
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newList = new TaskList(taskItemList);
         return newList;
@@ -42,7 +69,7 @@ public class App {
     public static void viewCurrentList(TaskList mainList){
         System.out.println("Current Tasks");
         System.out.println("_____________");
-        
+
         for(int i = 0; mainList.getTaskItemList().size() > i; i++){
             System.out.println("[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
                                 + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
