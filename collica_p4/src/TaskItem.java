@@ -1,14 +1,18 @@
 public class TaskItem {
     private String title;
     private String description;
-    private String dueDate;
+    private int dueDateYear;
+    private int dueDateMonth;
+    private int dueDateDay;
     private boolean complete;
 
 
-    public TaskItem(String title, String description, String dueDate, boolean complete){
+    public TaskItem(String title, String description, int dueDateYear, int dueDateMonth, int dueDateDay, boolean complete){
         this.title = title;
         this.description = description;
-        this.dueDate = dueDate;
+        this.dueDateYear = dueDateYear;
+        this.dueDateMonth = dueDateMonth;
+        this.dueDateDay = dueDateDay;
         this.complete = complete;
     }
 
