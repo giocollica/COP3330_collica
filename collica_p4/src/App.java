@@ -40,6 +40,9 @@ public class App {
     }
 
     public static void viewCurrentList(TaskList mainList){
+        System.out.println("Current Tasks");
+        System.out.println("_____________");
+        
         for(int i = 0; mainList.getTaskItemList().size() > i; i++){
             System.out.println("[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
                                 + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
