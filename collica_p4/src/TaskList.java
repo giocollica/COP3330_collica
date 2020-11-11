@@ -21,13 +21,13 @@ public class TaskList {
         String newDescription = input.next();
         newItem.setDescription(newDescription);
 
-        System.out.print("Task due date (YYYY-MM-DD): ");
+        System.out.print("Task due date year (YYYY): ");
         String newDueDateYear = input.next();
         newItem.setDueDateYear(Integer.parseInt(newDueDateYear));
-        System.out.print("-");
+        System.out.print("Task due date month (MM): ");
         String newDueDateMonth = input.next();
         newItem.setDueDateMonth(Integer.parseInt(newDueDateMonth));
-        System.out.print("-");
+        System.out.print("Task due date day (DD): ");
         String newDueDateDay = input.next();
         newItem.setDueDateDay(Integer.parseInt(newDueDateDay));
 
