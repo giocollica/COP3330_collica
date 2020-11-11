@@ -10,7 +10,8 @@ public class TaskList {
 
     public void addItem(){
         Scanner input = new Scanner(System.in);
-        TaskItem newItem = new TaskItem("null", "null", "null", false);
+        TaskItem newItem = new TaskItem("null", "null", 0000,
+                                            00, 00, false);
 
         System.out.print("Task title: ");
         String newTitle = input.next();
@@ -21,8 +22,14 @@ public class TaskList {
         newItem.setDescription(newDescription);
 
         System.out.print("Task due date (YYYY-MM-DD): ");
-        String newDueDate = input.next();
-        newItem.setDueDate(newDueDate);
+        String newDueDateYear = input.next();
+        newItem.setDueDateYear(Integer.parseInt(newDueDateYear));
+        System.out.print("-");
+        String newDueDateMonth = input.next();
+        newItem.setDueDateMonth(Integer.parseInt(newDueDateMonth));
+        System.out.print("-");
+        String newDueDateDay = input.next();
+        newItem.setDueDateDay(Integer.parseInt(newDueDateDay));
 
         this.taskItemList.add(newItem);
     }
