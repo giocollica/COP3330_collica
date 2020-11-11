@@ -1,8 +1,13 @@
+import java.util.ArrayList;
+
 public class App {
 
     public static void main(String[] args){
         printMainMenu();
         printOperationMenu();
+        TaskList mainList = createNewList();
+
+        mainList.addItem();
     }
 
     public static void printMainMenu(){
@@ -11,6 +16,12 @@ public class App {
         System.out.println("1) create a new list");
         System.out.println("2) load an existing list");
         System.out.println("3) quit");
+    }
+
+    public static TaskList createNewList(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newList = new TaskList(taskItemList);
+        return newList;
     }
 
     public static void printOperationMenu(){
