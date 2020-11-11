@@ -24,8 +24,16 @@ public class TaskItem {
         return this.description;
     }
 
-    public String getDueDate(){
-        return this.dueDate;
+    public int getDueDateYear(){
+        return this.dueDateYear;
+    }
+
+    public int getDueDateMonth(){
+        return this.dueDateMonth;
+    }
+
+    public int getDueDateDay(){
+        return this.dueDateDay;
     }
 
     public boolean getComplete(){
@@ -40,8 +48,16 @@ public class TaskItem {
         this.description = newDescription;
     }
 
-    public void setDueDate(String newDueDate){
-        this.dueDate = newDueDate;
+    public void setDueDateYear(int newDueDateYear){
+        this.dueDateYear = newDueDateYear;
+    }
+
+    public void setDueDateMonth(int newDueDateMonth){
+        this.dueDateMonth = newDueDateMonth;
+    }
+
+    public void setDueDateDay(int newDueDateDay){
+        this.dueDateDay = newDueDateDay;
     }
 
     public void setComplete(boolean complete){
