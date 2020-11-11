@@ -8,6 +8,8 @@ public class App {
         TaskList mainList = createNewList();
 
         mainList.addItem();
+
+        viewCurrentList(mainList);
     }
 
     public static void printMainMenu(){
@@ -35,6 +37,12 @@ public class App {
         System.out.println("6) unmark an item as completed");
         System.out.println("7) save the current list");
         System.out.println("8) quit to the main menu");
+    }
+
+    public static void viewCurrentList(TaskList mainList){
+        for(int i = 0; mainList.getTaskItemList().size() > i; i++){
+            System.out.println("[" + mainList.getTaskItemList().get(i).getDueDate() + "]");
+        }
     }
 
 }
