@@ -2,12 +2,14 @@ public class TaskItem {
     private String title;
     private String description;
     private String dueDate;
+    private boolean complete;
 
 
-    public TaskItem(String title, String description, String dueDate){
+    public TaskItem(String title, String description, String dueDate, boolean complete){
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
+        this.complete = complete;
     }
 
     public String getTitle(){
@@ -21,7 +23,11 @@ public class TaskItem {
     public String getDueDate(){
         return this.dueDate;
     }
-    
+
+    public boolean getComplete(){
+        return this.complete;
+    }
+
     public void setTitle(String newTitle){
         this.title = newTitle;
     }
@@ -32,5 +38,9 @@ public class TaskItem {
 
     public void setDueDate(String newDueDate){
         this.dueDate = newDueDate;
+    }
+
+    public void setComplete(boolean complete){
+        this.complete = complete;
     }
 }
