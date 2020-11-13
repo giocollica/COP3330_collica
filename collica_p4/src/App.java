@@ -5,6 +5,19 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args){
+
+        mainMenu();
+    }
+
+    public static void printMainMenu(){
+        System.out.println("Main Menu");
+        System.out.println("_________\n");
+        System.out.println("1) create a new list");
+        System.out.println("2) load an existing list");
+        System.out.println("3) quit");
+    }
+
+    public static void mainMenu(){
         printMainMenu();
 
         Scanner input = new Scanner(System.in);
@@ -30,8 +43,10 @@ public class App {
 
             if(choice == 1){
                 mainList = createNewList();
+                operationMenu(mainList);
             }else if(choice == 2){
                 mainList = loadExistingList();
+                operationMenu(mainList);
             }else if(choice == 3){
                 System.exit(0);
             }else{
@@ -39,55 +54,6 @@ public class App {
                 printMainMenu();
             }
         }
-
-        while(choice < 1 || choice > 8){
-            boolean continueLoop = true;
-
-            do{
-                try{
-                    String choiceString = input.next();
-                    choice = Integer.parseInt(choiceString);
-                    continueLoop = false;
-                }catch(NumberFormatException numberFormatException){
-                    System.out.println("You must enter integers. Please try again.");
-                    input.nextLine();
-                }
-            }while(continueLoop);
-
-
-            if(choice == 1){
-                viewCurrentList(mainList);
-            }else if(choice == 2){
-                mainList.addItem();
-            }else if(choice == 3){
-                
-            }else if(choice == 4){
-
-            }else if(choice == 5){
-
-            }else if(choice == 6){
-
-            }else if(choice == 7){
-
-            }else if(choice == 8){
-
-            }else{
-                System.out.println("Invalid input Try again");
-                printMainMenu();
-            }
-        }
-
-        mainList.addItem();
-
-        viewCurrentList(mainList);
-    }
-
-    public static void printMainMenu(){
-        System.out.println("Main Menu");
-        System.out.println("_________\n");
-        System.out.println("1) create a new list");
-        System.out.println("2) load an existing list");
-        System.out.println("3) quit");
     }
 
     public static TaskList createNewList(){
@@ -113,6 +79,51 @@ public class App {
         System.out.println("6) unmark an item as completed");
         System.out.println("7) save the current list");
         System.out.println("8) quit to the main menu");
+    }
+
+    public static void operationMenu(TaskList mainList){
+        printOperationMenu();
+
+        Scanner input = new Scanner(System.in);
+        int choice = -1;
+
+        while(choice < 1 || choice > 8){
+            boolean continueLoop = true;
+
+            do{
+                try{
+                    String choiceString = input.next();
+                    choice = Integer.parseInt(choiceString);
+                    continueLoop = false;
+                }catch(NumberFormatException numberFormatException){
+                    System.out.println("You must enter integers. Please try again.");
+                    input.nextLine();
+                }
+            }while(continueLoop);
+
+
+            if(choice == 1){
+                viewCurrentList(mainList);
+            }else if(choice == 2){
+                mainList.addItem();
+            }else if(choice == 3){
+                viewCurrentList(mainList);
+            }else if(choice == 4){
+                viewCurrentList(mainList);
+                mainList.removeItem();
+            }else if(choice == 5){
+
+            }else if(choice == 6){
+
+            }else if(choice == 7){
+
+            }else if(choice == 8){
+                mainMenu();
+            }else{
+                System.out.println("Invalid input Try again");
+                printMainMenu();
+            }
+        }
     }
 
     public static void viewCurrentList(TaskList mainList){
