@@ -40,6 +40,43 @@ public class App {
             }
         }
 
+        while(choice < 1 || choice > 8){
+            boolean continueLoop = true;
+
+            do{
+                try{
+                    String choiceString = input.next();
+                    choice = Integer.parseInt(choiceString);
+                    continueLoop = false;
+                }catch(NumberFormatException numberFormatException){
+                    System.out.println("You must enter integers. Please try again.");
+                    input.nextLine();
+                }
+            }while(continueLoop);
+
+
+            if(choice == 1){
+                viewCurrentList(mainList);
+            }else if(choice == 2){
+                mainList.addItem();
+            }else if(choice == 3){
+                
+            }else if(choice == 4){
+
+            }else if(choice == 5){
+
+            }else if(choice == 6){
+
+            }else if(choice == 7){
+
+            }else if(choice == 8){
+
+            }else{
+                System.out.println("Invalid input Try again");
+                printMainMenu();
+            }
+        }
+
         mainList.addItem();
 
         viewCurrentList(mainList);
