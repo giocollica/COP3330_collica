@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -13,8 +14,19 @@ public class App {
         TaskList mainList = new TaskList(taskItemList);
 
         while(choice < 1 || choice > 3){
-            String choiceString = input.next();
-            choice = Integer.parseInt(choiceString);
+            boolean continueLoop = true;
+
+            do{
+                try{
+                    String choiceString = input.next();
+                    choice = Integer.parseInt(choiceString);
+                    continueLoop = false;
+                }catch(NumberFormatException numberFormatException){
+                    System.out.println("You must enter integers. Please try again.");
+                    input.nextLine();
+                }
+            }while(continueLoop);
+
 
             if(choice == 1){
                 mainList = createNewList();
