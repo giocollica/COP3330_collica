@@ -34,6 +34,16 @@ public class TaskList {
         this.taskItemList.add(newItem);
     }
 
+    public void removeItem(){
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Which task will you remove? ");
+        String taskToRemoveString = input.next();
+        int taskToRemove = Integer.parseInt(taskToRemoveString);
+
+        this.taskItemList.remove(taskToRemove);
+    }
+
     public ArrayList<TaskItem> getTaskItemList(){
         return this.taskItemList;
     }
