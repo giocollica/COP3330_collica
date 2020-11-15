@@ -114,6 +114,7 @@ public class App {
                 mainList.removeItem();
             }else if(choice == 5){
                 viewUncompleteTasks(mainList);
+                mainList.markCompleted();
             }else if(choice == 6){
 
             }else if(choice == 7){
