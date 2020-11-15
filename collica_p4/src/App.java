@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -119,7 +120,7 @@ public class App {
                 viewCompleteTasks(mainList);
                 mainList.markUncompleted();
             }else if(choice == 7){
-
+                saveToFile(mainList);
             }else if(choice == 8){
                 mainMenu();
             }else{
@@ -170,6 +171,24 @@ public class App {
                         + mainList.getTaskItemList().get(i).getDescription());
             }
         }
+    }
+
+    public static void saveToFile(TaskList mainList){
+        try(FileWriter savedListFile = new FileWriter("tasklist.txt")){
+            PrintWriter printWriter = new PrintWriter(savedListFile);
+            for(int i = 0; mainList.getTaskItemList().size() > i; i++){
+                printWriter.println(i + ")" + "  "+ "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateDay() + "] "
+                        + mainList.getTaskItemList().get(i).getTitle() + ": "
+                        + mainList.getTaskItemList().get(i).getDescription());
+            }
+        }catch (FileNotFoundException fileNotFoundException){
+            System.out.println("File was not found");
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
     }
 
 }
