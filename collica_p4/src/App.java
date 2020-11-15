@@ -159,7 +159,7 @@ public class App {
 
     public static void viewCompleteTasks(TaskList mainList){
         System.out.println("Completed Tasks");
-        System.out.println("_________________");
+        System.out.println("_______________");
 
         for(int i = 0; mainList.getTaskItemList().size() > i; i++){
             if(mainList.getTaskItemList().get(i).getComplete()){
