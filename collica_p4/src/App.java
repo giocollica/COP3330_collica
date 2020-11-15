@@ -108,6 +108,7 @@ public class App {
                 mainList.addItem();
             }else if(choice == 3){
                 viewCurrentList(mainList);
+                mainList.editItem();
             }else if(choice == 4){
                 viewCurrentList(mainList);
                 mainList.removeItem();
@@ -131,12 +132,16 @@ public class App {
         System.out.println("_____________");
 
         for(int i = 0; mainList.getTaskItemList().size() > i; i++){
-            System.out.println("[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
+            System.out.println(i + ")" + "  "+ "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
                                 + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
                                 + mainList.getTaskItemList().get(i).getDueDateDay() + "] "
                                 + mainList.getTaskItemList().get(i).getTitle() + ": "
                                 + mainList.getTaskItemList().get(i).getDescription());
         }
+    }
+
+    public static void viewUncompleteTasks(){
+
     }
 
 }
