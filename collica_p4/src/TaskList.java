@@ -44,6 +44,31 @@ public class TaskList {
         this.taskItemList.remove(taskToRemove);
     }
 
+    public void editItem(){
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Which task will you edit? ");
+        int taskToEdit = input.nextInt();
+
+        System.out.println("Enter a new title for task " + taskToEdit + ":");
+        String newTitle = input.nextLine();
+        this.taskItemList.get(taskToEdit).setTitle(newTitle);
+
+        System.out.println("Enter a new description for task " + taskToEdit + ":");
+        String newDescription = input.nextLine();
+        this.taskItemList.get(taskToEdit).setDescription(newDescription);
+
+        System.out.println("Enter a new due date year (YYYY) for task " + taskToEdit + ":");
+        int newDueDateYear = input.nextInt();
+        this.taskItemList.get(taskToEdit).setDueDateYear(newDueDateYear);
+        System.out.println("Enter a new due date month (MM) for task " + taskToEdit + ":");
+        int newDueDateMonth = input.nextInt();
+        this.taskItemList.get(taskToEdit).setDueDateMonth(newDueDateMonth);
+        System.out.println("Enter a new due date day (DD) for task " + taskToEdit + ":");
+        int newDueDateDay = input.nextInt();
+        this.taskItemList.get(taskToEdit).setDueDateDay(newDueDateDay);
+    }
+
     public ArrayList<TaskItem> getTaskItemList(){
         return this.taskItemList;
     }
