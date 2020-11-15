@@ -82,12 +82,12 @@ public class App {
     }
 
     public static void operationMenu(TaskList mainList){
-        printOperationMenu();
-
         Scanner input = new Scanner(System.in);
         int choice = -1;
 
-        while(choice < 1 || choice > 8){
+        while(choice != 8){
+            printOperationMenu();
+
             boolean continueLoop = true;
 
             do{
@@ -113,7 +113,7 @@ public class App {
                 viewCurrentList(mainList);
                 mainList.removeItem();
             }else if(choice == 5){
-
+                viewUncompleteTasks(mainList);
             }else if(choice == 6){
 
             }else if(choice == 7){
@@ -140,8 +140,19 @@ public class App {
         }
     }
 
-    public static void viewUncompleteTasks(){
+    public static void viewUncompleteTasks(TaskList mainList){
+        System.out.println("Uncompleted Tasks");
+        System.out.println("_________________");
 
+        for(int i = 0; mainList.getTaskItemList().size() > i; i++){
+            if(!mainList.getTaskItemList().get(i).getComplete()){
+                System.out.println(i + ")" + "  "+ "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateDay() + "] "
+                        + mainList.getTaskItemList().get(i).getTitle() + ": "
+                        + mainList.getTaskItemList().get(i).getDescription());
+            }
+        }
     }
 
 }
