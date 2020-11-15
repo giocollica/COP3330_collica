@@ -78,6 +78,15 @@ public class TaskList {
         this.taskItemList.get(taskToEdit).setComplete(true);
     }
 
+    public void markUncompleted(){
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Which task will you unmark as completed? ");
+        int taskToEdit = input.nextInt();
+
+        this.taskItemList.get(taskToEdit).setComplete(false);
+    }
+
     public ArrayList<TaskItem> getTaskItemList(){
         return this.taskItemList;
     }

@@ -116,7 +116,8 @@ public class App {
                 viewUncompleteTasks(mainList);
                 mainList.markCompleted();
             }else if(choice == 6){
-
+                viewCompleteTasks(mainList);
+                mainList.markUncompleted();
             }else if(choice == 7){
 
             }else if(choice == 8){
@@ -147,6 +148,21 @@ public class App {
 
         for(int i = 0; mainList.getTaskItemList().size() > i; i++){
             if(!mainList.getTaskItemList().get(i).getComplete()){
+                System.out.println(i + ")" + "  "+ "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateDay() + "] "
+                        + mainList.getTaskItemList().get(i).getTitle() + ": "
+                        + mainList.getTaskItemList().get(i).getDescription());
+            }
+        }
+    }
+
+    public static void viewCompleteTasks(TaskList mainList){
+        System.out.println("Completed Tasks");
+        System.out.println("_________________");
+
+        for(int i = 0; mainList.getTaskItemList().size() > i; i++){
+            if(mainList.getTaskItemList().get(i).getComplete()){
                 System.out.println(i + ")" + "  "+ "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
                         + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
                         + mainList.getTaskItemList().get(i).getDueDateDay() + "] "
