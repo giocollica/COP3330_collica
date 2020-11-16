@@ -27,6 +27,7 @@ public class App {
 
     //print out Main Menu for user
     public static void printMainMenu() {
+        System.out.println();
         System.out.println("Main Menu");
         System.out.println("_________\n");
         System.out.println("1) create a new list");
@@ -143,6 +144,7 @@ public class App {
 
     //print the operations menu
     public static void printOperationMenu() {
+        System.out.println();
         System.out.println("List Operation Menu");
         System.out.println("___________________\n");
         System.out.println("1) view the list");
@@ -207,6 +209,7 @@ public class App {
 
     //print out the current list
     public static void viewCurrentList(TaskList mainList) {
+        System.out.println();
         System.out.println("Current Tasks");
         System.out.println("_____________");
 
@@ -229,6 +232,7 @@ public class App {
 
     //print out all uncomplete tasks
     public static void viewUncompleteTasks(TaskList mainList) {
+        System.out.println();
         System.out.println("Uncompleted Tasks");
         System.out.println("_________________");
 
@@ -245,6 +249,7 @@ public class App {
 
     //print out all complete tasks
     public static void viewCompleteTasks(TaskList mainList) {
+        System.out.println();
         System.out.println("Completed Tasks");
         System.out.println("_______________");
 

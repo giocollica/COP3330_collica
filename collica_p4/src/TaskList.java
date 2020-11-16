@@ -33,6 +33,8 @@ public class TaskList {
                 TaskItem newItem = new TaskItem("null", "null", 0000,
                         00, 00, false);
 
+                System.out.println();
+
                 System.out.print("Task title: ");
                 String newTitle = input.nextLine();
                 newItem.setTitle(newTitle);
@@ -95,6 +97,8 @@ public class TaskList {
             try {
                 Scanner input = new Scanner(System.in);
 
+                System.out.println();
+
                 System.out.print("Which task will you remove? ");
                 String taskToRemoveString = input.next();
                 int taskToRemove = Integer.parseInt(taskToRemoveString);
@@ -124,6 +128,8 @@ public class TaskList {
         while (continueLoop) {
             try {
                 Scanner input = new Scanner(System.in);
+
+                System.out.println();
 
                 System.out.println("Which task will you edit? ");
                 int taskToEdit = input.nextInt();
@@ -165,6 +171,8 @@ public class TaskList {
             try {
                 Scanner input = new Scanner(System.in);
 
+                System.out.println();
+
                 System.out.println("Which task will you mark as completed? ");
                 int taskToEdit = input.nextInt();
 
@@ -191,6 +199,8 @@ public class TaskList {
         while (continueLoop) {
             try {
                 Scanner input = new Scanner(System.in);
+
+                System.out.println();
 
                 System.out.println("Which task will you unmark as completed? ");
                 int taskToEdit = input.nextInt();
