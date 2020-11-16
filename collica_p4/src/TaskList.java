@@ -86,6 +86,10 @@ public class TaskList {
         this.taskItemList.get(taskToEdit).setComplete(true);
     }
 
+    public void markCompletedHardCode(int taskNumber){
+        this.taskItemList.get(taskNumber).setComplete(true);
+    }
+
     public void markUncompleted(){
         Scanner input = new Scanner(System.in);
 
