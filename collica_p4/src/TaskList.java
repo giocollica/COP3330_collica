@@ -52,6 +52,10 @@ public class TaskList {
         this.taskItemList.remove(taskToRemove);
     }
 
+    public void removeItemHardCode(int taskToRemove){
+        this.taskItemList.remove(taskToRemove);
+    }
+
     public void editItem(){
         Scanner input = new Scanner(System.in);
 
@@ -97,6 +101,10 @@ public class TaskList {
         int taskToEdit = input.nextInt();
 
         this.taskItemList.get(taskToEdit).setComplete(false);
+    }
+
+    public void markUncompletedHardCode(int taskNumber){
+        this.taskItemList.get(taskNumber).setComplete(false);
     }
 
     public ArrayList<TaskItem> getTaskItemList(){

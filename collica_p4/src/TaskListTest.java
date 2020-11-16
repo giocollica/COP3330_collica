@@ -174,7 +174,17 @@ public class TaskListTest {
 
     @Test
     public void removingTaskItemsDecreasesSize(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        int size = 2;
+
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+        newTaskList.removeItemHardCode(1);
+
+        assertEquals(newTaskList.getTaskItemList().size(), size - 1);
     }
 
     @Test
@@ -189,7 +199,17 @@ public class TaskListTest {
 
     @Test
     public void uncompletingTaskItemChangesStatus(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+        newTaskList.markCompletedHardCode(0);
+
+        newTaskList.markUncompletedHardCode(0);
+
+        assertEquals(newTaskList.getTaskItemList().get(0).getComplete(), false);
     }
 
     @Test
