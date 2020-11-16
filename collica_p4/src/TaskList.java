@@ -90,20 +90,8 @@ public class TaskList {
 
     }
 
-    public void removeItemHardCode(int taskToRemove){
-        boolean continueLoop = true;
-
-        while(continueLoop){
-            try{
-                this.taskItemList.remove(taskToRemove);
-
-                continueLoop = false;
-            } catch (IndexOutOfBoundsException indexOutOfBoundsException){
-                System.out.println("Index does not exist. Please try again.");
-            }
-        }
-
-
+    public void removeItemHardCode(int taskToRemove) throws IndexOutOfBoundsException {
+        this.taskItemList.remove(taskToRemove);
     }
 
     public void editItem(){
@@ -162,18 +150,8 @@ public class TaskList {
         }
     }
 
-    public void markCompletedHardCode(int taskNumber){
-        boolean continueLoop = true;
-
-        while(continueLoop){
-            try{
+    public void markCompletedHardCode(int taskNumber) throws IndexOutOfBoundsException{
                 this.taskItemList.get(taskNumber).setComplete(true);
-
-                continueLoop = false;
-            } catch (IndexOutOfBoundsException indexOutOfBoundsException){
-                System.out.println("Index does not exist. Please try again.");
-            }
-        }
     }
 
     public void markUncompleted(){
