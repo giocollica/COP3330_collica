@@ -64,9 +64,7 @@ public class App {
     }
 
     public static TaskList loadExistingList(){
-        ArrayList<TaskItem> taskItemList = new ArrayList<>();
-        TaskList newList = new TaskList(taskItemList);
-        return newList;
+        File taskList = new File("savedtasklist.txt");
     }
 
     public static void printOperationMenu(){
@@ -134,12 +132,20 @@ public class App {
         System.out.println("Current Tasks");
         System.out.println("_____________");
 
-        for(int i = 0; mainList.getTaskItemList().size() > i; i++){
-            System.out.println(i + ")" + "  "+ "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
-                                + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
-                                + mainList.getTaskItemList().get(i).getDueDateDay() + "] "
-                                + mainList.getTaskItemList().get(i).getTitle() + ": "
-                                + mainList.getTaskItemList().get(i).getDescription());
+        for(int i = 0; mainList.getTaskItemList().size() > i; i++) {
+            if (mainList.getTaskItemList().get(i).getComplete()) {
+                System.out.println(i + ")" + " " + "*** " + "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateDay() + "] "
+                        + mainList.getTaskItemList().get(i).getTitle() + ": "
+                        + mainList.getTaskItemList().get(i).getDescription());
+            } else {
+                System.out.println(i + ")" + "  " + "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateMonth() + "-"
+                        + mainList.getTaskItemList().get(i).getDueDateDay() + "] "
+                        + mainList.getTaskItemList().get(i).getTitle() + ": "
+                        + mainList.getTaskItemList().get(i).getDescription());
+            }
         }
     }
 
@@ -174,7 +180,7 @@ public class App {
     }
 
     public static void saveToFile(TaskList mainList){
-        try(FileWriter savedListFile = new FileWriter("tasklist.txt")){
+        try(FileWriter savedListFile = new FileWriter("savedtasklist.txt")){
             PrintWriter printWriter = new PrintWriter(savedListFile);
             for(int i = 0; mainList.getTaskItemList().size() > i; i++){
                 printWriter.println(i + ")" + "  "+ "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
