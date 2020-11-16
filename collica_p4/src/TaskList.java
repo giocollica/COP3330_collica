@@ -34,6 +34,14 @@ public class TaskList {
         this.taskItemList.add(newItem);
     }
 
+    public void addItemHardCode(String title, String description, int dueDateYear, int dueDateMonth, int dueDateDay){
+        Scanner input = new Scanner(System.in);
+        TaskItem newItem = new TaskItem(title, description, dueDateYear,
+                dueDateMonth, dueDateDay, false);
+
+        this.taskItemList.add(newItem);
+    }
+
     public void removeItem(){
         Scanner input = new Scanner(System.in);
 
