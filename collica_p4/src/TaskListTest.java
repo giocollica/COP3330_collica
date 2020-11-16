@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TaskListTest {
     @Test
-    public void addingTaskItemsIncreasesSize(){
+    public void addingTaskItemsIncreasesSize() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -18,7 +18,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void completingTaskItemChangesStatus(){
+    public void completingTaskItemChangesStatus() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -31,7 +31,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void completingTaskItemFailsWithInvalidIndex(){
+    public void completingTaskItemFailsWithInvalidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -42,7 +42,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void editingTaskItemChangesValues(){
+    public void editingTaskItemChangesValues() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -57,7 +57,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void editingTaskItemDescriptionChangesValue(){
+    public void editingTaskItemDescriptionChangesValue() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -72,7 +72,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void editingTaskItemDescriptionFailsWithInvalidIndex(){
+    public void editingTaskItemDescriptionFailsWithInvalidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -82,12 +82,11 @@ public class TaskListTest {
         newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
 
 
-
         assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.getTaskItemList().get(2).setDescription("This is not a test"));
     }
 
     @Test
-    public void editingTaskItemDueDateChangesValue(){
+    public void editingTaskItemDueDateChangesValue() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -102,7 +101,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void editingTaskItemDueDateFailsWithInvalidIndex(){
+    public void editingTaskItemDueDateFailsWithInvalidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -112,12 +111,11 @@ public class TaskListTest {
         newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
 
 
-
         assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.getTaskItemList().get(2).setDueDateYear(2021));
     }
 
     @Test
-    public void editingTaskItemTitleChangesValue(){
+    public void editingTaskItemTitleChangesValue() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -132,7 +130,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void editingTaskItemTitleFailsWithInvalidIndex(){
+    public void editingTaskItemTitleFailsWithInvalidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -145,7 +143,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void gettingTaskItemDescriptionFailsWithInvalidIndex(){
+    public void gettingTaskItemDescriptionFailsWithInvalidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -158,7 +156,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void gettingTaskItemDescriptionSucceedsWithValidIndex(){
+    public void gettingTaskItemDescriptionSucceedsWithValidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -171,7 +169,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void gettingTaskItemDueDateFailsWithInvalidIndex(){
+    public void gettingTaskItemDueDateFailsWithInvalidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -184,7 +182,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void gettingTaskItemDueDateSucceedsWithValidIndex(){
+    public void gettingTaskItemDueDateSucceedsWithValidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -197,7 +195,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void gettingTaskItemTitleFailsWithInvalidIndex(){
+    public void gettingTaskItemTitleFailsWithInvalidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -210,7 +208,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void gettingTaskItemTitleSucceedsWithValidIndex(){
+    public void gettingTaskItemTitleSucceedsWithValidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -223,7 +221,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void newTaskListIsEmpty(){
+    public void newTaskListIsEmpty() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -231,7 +229,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void removingTaskItemsDecreasesSize(){
+    public void removingTaskItemsDecreasesSize() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -246,7 +244,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void removingTaskItemsFailsWithInvalidIndex(){
+    public void removingTaskItemsFailsWithInvalidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -261,12 +259,12 @@ public class TaskListTest {
     }
 
     @Test
-    public void savedTaskListCanBeLoaded(){
+    public void savedTaskListCanBeLoaded() {
 
     }
 
     @Test
-    public void uncompletingTaskItemChangesStatus(){
+    public void uncompletingTaskItemChangesStatus() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
@@ -281,7 +279,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void uncompletingTaskItemFailsWithInvalidIndex(){
+    public void uncompletingTaskItemFailsWithInvalidIndex() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newTaskList = new TaskList(taskItemList);
 
