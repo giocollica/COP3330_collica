@@ -1,9 +1,23 @@
+/*
+    Giovanni Collica
+    Programming Assignment 4
+    COP 3330
+
+    This java class contains all the
+    tests provided by the assignment
+    to ensure that the code is working.
+ */
+
+//necessary imports
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//TaskListTest class
+//contains all necessary tests for TaskList
 public class TaskListTest {
     @Test
     public void addingTaskItemsIncreasesSize() {

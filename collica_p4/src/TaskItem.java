@@ -1,3 +1,13 @@
+/*
+    Giovanni Collica
+    Programming Assignment 4
+    COP 3330
+
+    This java class contains the constructor
+    and necessary methods for TaskItem
+ */
+
+//TaskItem class
 public class TaskItem {
     private String title;
     private String description;
@@ -6,8 +16,8 @@ public class TaskItem {
     private int dueDateDay;
     private boolean complete;
 
-
-    public TaskItem(String title, String description, int dueDateYear, int dueDateMonth, int dueDateDay, boolean complete){
+    //constructor
+    public TaskItem(String title, String description, int dueDateYear, int dueDateMonth, int dueDateDay, boolean complete) {
         this.title = title;
         this.description = description;
         this.dueDateYear = dueDateYear;
@@ -16,51 +26,65 @@ public class TaskItem {
         this.complete = complete;
     }
 
-    public String getTitle(){
+    //method to get the title
+    public String getTitle() {
         return this.title;
     }
 
-    public String getDescription(){
+    //method to get the description
+    public String getDescription() {
         return this.description;
     }
 
-    public int getDueDateYear(){
+    //method to get the due date year
+    public int getDueDateYear() {
         return this.dueDateYear;
     }
 
-    public int getDueDateMonth(){
+    //method to get the due date month
+    public int getDueDateMonth() {
         return this.dueDateMonth;
     }
 
-    public int getDueDateDay(){
+    //method to get the due date day
+    public int getDueDateDay() {
         return this.dueDateDay;
     }
 
-    public boolean getComplete(){
+    //method to get if the task is complete or not
+    //based on boolean true or false
+    public boolean getComplete() {
         return this.complete;
     }
 
-    public void setTitle(String newTitle){
+    //method to set the title
+    public void setTitle(String newTitle) {
         this.title = newTitle;
     }
 
-    public void setDescription(String newDescription){
+    //method to set the description
+    public void setDescription(String newDescription) {
         this.description = newDescription;
     }
 
-    public void setDueDateYear(int newDueDateYear){
+    //method to set the due date year
+    public void setDueDateYear(int newDueDateYear) {
         this.dueDateYear = newDueDateYear;
     }
 
-    public void setDueDateMonth(int newDueDateMonth){
+    //method to set the due date month
+    public void setDueDateMonth(int newDueDateMonth) {
         this.dueDateMonth = newDueDateMonth;
     }
 
-    public void setDueDateDay(int newDueDateDay){
+    //method to set the due date day
+    public void setDueDateDay(int newDueDateDay) {
         this.dueDateDay = newDueDateDay;
     }
 
-    public void setComplete(boolean complete){
+    //method to set if the task is complete or not
+    //based on boolean true or false
+    public void setComplete(boolean complete) {
         this.complete = complete;
     }
 }

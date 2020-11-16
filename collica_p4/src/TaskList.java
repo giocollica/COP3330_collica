@@ -1,18 +1,34 @@
+/*
+    Giovanni Collica
+    Programming Assignment 4
+    COP 3330
+
+    This java class contains the constructor
+    and necessary methods for TaskList
+ */
+
+//necessary imports
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//TaskList class
 public class TaskList {
     private ArrayList<TaskItem> taskItemList = new ArrayList<>();
 
-    public TaskList(ArrayList<TaskItem> taskItemList){
+    //constructor
+    public TaskList(ArrayList<TaskItem> taskItemList) {
         this.taskItemList = taskItemList;
     }
 
-    public void addItem(){
+    //method to add item to the tasklist
+    public void addItem() {
         boolean continueLoop = true;
 
-        while(continueLoop){
-            try{
+        //loop to ensure that valid input is given
+        //if not the user can try again
+        while (continueLoop) {
+            try {
                 Scanner input = new Scanner(System.in);
                 TaskItem newItem = new TaskItem("null", "null", 0000,
                         00, 00, false);
@@ -38,7 +54,7 @@ public class TaskList {
                 this.taskItemList.add(newItem);
 
                 continueLoop = false;
-            }catch (IndexOutOfBoundsException indexOutOfBoundsException){
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 System.out.println("Index does not exist. Please try again.");
             }
         }
@@ -46,11 +62,14 @@ public class TaskList {
 
     }
 
-    public void addItemHardCode(String title, String description, int dueDateYear, int dueDateMonth, int dueDateDay){
+    //method to add item to the tasklist for testing purposes
+    public void addItemHardCode(String title, String description, int dueDateYear, int dueDateMonth, int dueDateDay) {
         boolean continueLoop = true;
 
-        while(continueLoop){
-            try{
+        //loop to ensure that valid input is given
+        //if not the user can try again
+        while (continueLoop) {
+            try {
                 Scanner input = new Scanner(System.in);
                 TaskItem newItem = new TaskItem(title, description, dueDateYear,
                         dueDateMonth, dueDateDay, false);
@@ -58,20 +77,22 @@ public class TaskList {
                 this.taskItemList.add(newItem);
 
                 continueLoop = false;
-            }catch (IndexOutOfBoundsException indexOutOfBoundsException){
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 System.out.println("Index does not exist. Please try again.");
             }
         }
 
 
-
     }
 
-    public void removeItem(){
+    //method to remove item from a tasklist
+    public void removeItem() {
         boolean continueLoop = true;
 
-        while(continueLoop){
-            try{
+        //loop to ensure that valid input is given
+        //if not the user can try again
+        while (continueLoop) {
+            try {
                 Scanner input = new Scanner(System.in);
 
                 System.out.print("Which task will you remove? ");
@@ -81,24 +102,27 @@ public class TaskList {
                 this.taskItemList.remove(taskToRemove);
 
                 continueLoop = false;
-            }catch (IndexOutOfBoundsException indexOutOfBoundsException){
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 System.out.println("Index does not exist. Please try again.");
             }
         }
 
 
-
     }
 
+    //method to remove item from a tasklist for testing purposes
     public void removeItemHardCode(int taskToRemove) throws IndexOutOfBoundsException {
         this.taskItemList.remove(taskToRemove);
     }
 
-    public void editItem(){
+    //method to edit an item of a task list
+    public void editItem() {
         boolean continueLoop = true;
 
-        while(continueLoop){
-            try{
+        //loop to ensure that valid input is given
+        //if not the user can try again
+        while (continueLoop) {
+            try {
                 Scanner input = new Scanner(System.in);
 
                 System.out.println("Which task will you edit? ");
@@ -123,7 +147,7 @@ public class TaskList {
                 this.taskItemList.get(taskToEdit).setDueDateDay(newDueDateDay);
 
                 continueLoop = false;
-            } catch (IndexOutOfBoundsException indexOutOfBoundsException){
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 System.out.println("Index does not exist. Please try again.");
             }
         }
@@ -131,11 +155,14 @@ public class TaskList {
 
     }
 
-    public void markCompleted(){
+    //method to mark a task as completed
+    public void markCompleted() {
         boolean continueLoop = true;
 
-        while(continueLoop){
-            try{
+        //loop to ensure that valid input is given
+        //if not the user can try again
+        while (continueLoop) {
+            try {
                 Scanner input = new Scanner(System.in);
 
                 System.out.println("Which task will you mark as completed? ");
@@ -144,21 +171,25 @@ public class TaskList {
                 this.taskItemList.get(taskToEdit).setComplete(true);
 
                 continueLoop = false;
-            } catch (IndexOutOfBoundsException indexOutOfBoundsException){
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 System.out.println("Index does not exist. Please try again.");
             }
         }
     }
 
-    public void markCompletedHardCode(int taskNumber) throws IndexOutOfBoundsException{
-                this.taskItemList.get(taskNumber).setComplete(true);
+    //method to mark a task as completed for testing purposes
+    public void markCompletedHardCode(int taskNumber) throws IndexOutOfBoundsException {
+        this.taskItemList.get(taskNumber).setComplete(true);
     }
 
-    public void markUncompleted(){
+    //method to mark a task as uncompleted
+    public void markUncompleted() {
         boolean continueLoop = true;
 
-        while(continueLoop){
-            try{
+        //loop to ensure that valid input is given
+        //if not the user can try again
+        while (continueLoop) {
+            try {
                 Scanner input = new Scanner(System.in);
 
                 System.out.println("Which task will you unmark as completed? ");
@@ -167,7 +198,7 @@ public class TaskList {
                 this.taskItemList.get(taskToEdit).setComplete(false);
 
                 continueLoop = false;
-            } catch(IndexOutOfBoundsException indexOutOfBoundsException){
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 System.out.println("Index does not exist. Please try again.");
             }
         }
@@ -175,21 +206,25 @@ public class TaskList {
 
     }
 
-    public void markUncompletedHardCode(int taskNumber){
+    //method to mark a task as uncompleted for testing purposes
+    public void markUncompletedHardCode(int taskNumber) {
         boolean continueLoop = true;
 
-        while(continueLoop){
-            try{
+        //loop to ensure that valid input is given
+        //if not the user can try again
+        while (continueLoop) {
+            try {
                 this.taskItemList.get(taskNumber).setComplete(false);
 
                 continueLoop = false;
-            } catch(IndexOutOfBoundsException indexOutOfBoundsException){
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 System.out.println("Index does not exist. Please try again.");
             }
         }
     }
 
-    public ArrayList<TaskItem> getTaskItemList(){
+    //method to get the task item list
+    public ArrayList<TaskItem> getTaskItemList() {
         return this.taskItemList;
     }
 }

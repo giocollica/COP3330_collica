@@ -1,20 +1,35 @@
+/*
+    Giovanni Collica
+    Programming Assignment 4
+    COP 3330
+
+    This java class contains all the
+    tests provided by the assignment
+    to ensure that the code is working.
+ */
+
+//necessary imports
+
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
+//TaskItemTest class
+//contains all necessary tests for TaskItem
 public class TaskItemTest {
 
     @Test
-    public void creatingTaskItemFailsWithInvalidDueDate(){
+    public void creatingTaskItemFailsWithInvalidDueDate() {
 
     }
 
     @Test
-    public void creatingTaskItemFailsWithInvalidTitle(){
+    public void creatingTaskItemFailsWithInvalidTitle() {
 
     }
 
     @Test
-    public void creatingTaskItemSucceedsWithValidDueDate(){
+    public void creatingTaskItemSucceedsWithValidDueDate() {
         TaskItem newTask = new TaskItem("Test", "Test", 2021, 12, 25, false);
 
         int expectedDueDateYear = 2021;
@@ -23,7 +38,7 @@ public class TaskItemTest {
     }
 
     @Test
-    public void creatingTaskItemSucceedsWithValidTitle(){
+    public void creatingTaskItemSucceedsWithValidTitle() {
         TaskItem newTask = new TaskItem("Test", "Test", 2021, 12, 25, false);
 
         String expectedTitle = "Test";
@@ -32,12 +47,12 @@ public class TaskItemTest {
     }
 
     @Test
-    public void settingTaskItemDueDateFailsWithInvalidDate(){
+    public void settingTaskItemDueDateFailsWithInvalidDate() {
 
     }
 
     @Test
-    public void settingTaskItemDueDateSucceedsWithValidDate(){
+    public void settingTaskItemDueDateSucceedsWithValidDate() {
         TaskItem newTask = new TaskItem("Test", "Test", 2021, 12, 25, false);
 
         int expectedDueDateYear = 2020;
@@ -48,12 +63,12 @@ public class TaskItemTest {
     }
 
     @Test
-    public void settingTaskItemTitleFailsWithInvalidTitle(){
+    public void settingTaskItemTitleFailsWithInvalidTitle() {
 
     }
 
     @Test
-    public void settingTaskItemTitleSucceedsWithValidTitle(){
+    public void settingTaskItemTitleSucceedsWithValidTitle() {
         TaskItem newTask = new TaskItem("Test", "Test", 2021, 12, 25, false);
 
         String expectedTitle = "This is a test";
