@@ -82,29 +82,71 @@ public class TaskList {
     }
 
     public void markCompleted(){
-        Scanner input = new Scanner(System.in);
+        boolean continueLoop = true;
 
-        System.out.println("Which task will you mark as completed? ");
-        int taskToEdit = input.nextInt();
+        while(continueLoop){
+            try{
+                Scanner input = new Scanner(System.in);
 
-        this.taskItemList.get(taskToEdit).setComplete(true);
+                System.out.println("Which task will you mark as completed? ");
+                int taskToEdit = input.nextInt();
+
+                this.taskItemList.get(taskToEdit).setComplete(true);
+
+                continueLoop = false;
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException){
+                System.out.println("Index does not exist. Please try again.");
+            }
+        }
     }
 
     public void markCompletedHardCode(int taskNumber){
-        this.taskItemList.get(taskNumber).setComplete(true);
+        boolean continueLoop = true;
+
+        while(continueLoop){
+            try{
+                this.taskItemList.get(taskNumber).setComplete(true);
+
+                continueLoop = false;
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException){
+                System.out.println("Index does not exist. Please try again.");
+            }
+        }
     }
 
     public void markUncompleted(){
-        Scanner input = new Scanner(System.in);
+        boolean continueLoop = true;
 
-        System.out.println("Which task will you unmark as completed? ");
-        int taskToEdit = input.nextInt();
+        while(continueLoop){
+            try{
+                Scanner input = new Scanner(System.in);
 
-        this.taskItemList.get(taskToEdit).setComplete(false);
+                System.out.println("Which task will you unmark as completed? ");
+                int taskToEdit = input.nextInt();
+
+                this.taskItemList.get(taskToEdit).setComplete(false);
+
+                continueLoop = false;
+            } catch(IndexOutOfBoundsException indexOutOfBoundsException){
+                System.out.println("Index does not exist. Please try again.");
+            }
+        }
+
+
     }
 
     public void markUncompletedHardCode(int taskNumber){
-        this.taskItemList.get(taskNumber).setComplete(false);
+        boolean continueLoop = true;
+
+        while(continueLoop){
+            try{
+                this.taskItemList.get(taskNumber).setComplete(false);
+
+                continueLoop = false;
+            } catch(IndexOutOfBoundsException indexOutOfBoundsException){
+                System.out.println("Index does not exist. Please try again.");
+            }
+        }
     }
 
     public ArrayList<TaskItem> getTaskItemList(){
