@@ -69,12 +69,14 @@ public class App {
     }
 
     public static TaskList loadExistingList() throws FileNotFoundException {
-
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the name of the file to load: ");
+        String textFile = input.nextLine();
 
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newList = new TaskList(taskItemList);
 
-        File taskList = new File("savedtasklist.txt");
+        File taskList = new File(textFile);
 
         Scanner sc = new Scanner(taskList);
 
