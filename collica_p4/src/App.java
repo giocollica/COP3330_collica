@@ -65,6 +65,9 @@ public class App {
 
     public static TaskList loadExistingList(){
         File taskList = new File("savedtasklist.txt");
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newList = new TaskList(taskItemList);
+        return newList;
     }
 
     public static void printOperationMenu(){
