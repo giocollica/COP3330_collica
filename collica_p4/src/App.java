@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -46,8 +45,14 @@ public class App {
                 mainList = createNewList();
                 operationMenu(mainList);
             }else if(choice == 2){
-                mainList = loadExistingList();
-                operationMenu(mainList);
+                try{
+                    mainList = loadExistingList();
+                    operationMenu(mainList);
+                }catch (FileNotFoundException fileNotFoundException) {
+                    System.out.println("File was not found");
+                    mainMenu();
+                }
+
             }else if(choice == 3){
                 System.exit(0);
             }else{
@@ -63,10 +68,48 @@ public class App {
         return newList;
     }
 
-    public static TaskList loadExistingList(){
-        File taskList = new File("savedtasklist.txt");
+    public static TaskList loadExistingList() throws FileNotFoundException {
+
+
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newList = new TaskList(taskItemList);
+
+        File taskList = new File("savedtasklist.txt");
+
+        Scanner sc = new Scanner(taskList);
+
+        while (sc.hasNext()){
+            String taskNumberRaw = sc.next();
+            char taskNumberString = taskNumberRaw.charAt(0);
+            int taskNumber = Integer.parseInt(String.valueOf(taskNumberString));
+            System.out.println(taskNumber);
+
+            String dueDateRaw = sc.next();
+            String[] dueDateFirstStringArray = dueDateRaw.split("\\[", 2);
+            String dueDateFirstIteration = dueDateFirstStringArray[1];
+
+            String[] dueDateSecondStringArray = dueDateFirstIteration.split("-", 5);
+            String dueDateSecondIteration = dueDateSecondStringArray[2];
+
+            String dueDateYearString = dueDateSecondStringArray[0];
+            int dueDateYear = Integer.parseInt(dueDateYearString);
+
+            String dueDateMonthString = dueDateSecondStringArray[1];
+            int dueDateMonth = Integer.parseInt(dueDateMonthString);
+
+            String[] dueDateThirdStringArray = dueDateSecondIteration.split("\\]", 2);
+            String dueDateDayString = dueDateThirdStringArray[0];
+            int dueDateDay = Integer.parseInt(dueDateDayString);
+
+            String titleRaw = sc.next();
+            String[] titleStringArray = titleRaw.split(":", 2);
+            String title = titleStringArray[0];
+
+            String description = sc.next();
+
+            newList.addItemHardCode(title, description, dueDateYear, dueDateMonth, dueDateDay);
+        }
+
         return newList;
     }
 
