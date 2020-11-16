@@ -215,18 +215,3 @@ public class TaskList {
         return this.taskItemList;
     }
 }
-
-
-
-    boolean continueLoop = true;
-
-        while(continueLoop){
-                try{
-
-
-                continueLoop = false;
-                }
-                }
-
-
-                System.out.println("Index does not exist. Please try again.");
