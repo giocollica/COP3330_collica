@@ -32,7 +32,13 @@ public class TaskListTest {
 
     @Test
     public void completingTaskItemFailsWithInvalidIndex(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+        assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.markCompletedHardCode(2));
     }
 
     @Test
@@ -67,7 +73,17 @@ public class TaskListTest {
 
     @Test
     public void editingTaskItemDescriptionFailsWithInvalidIndex(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        String newDescription = "This is not a test";
+
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+
+
+        assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.getTaskItemList().get(2).setDescription("This is not a test"));
     }
 
     @Test
@@ -87,7 +103,17 @@ public class TaskListTest {
 
     @Test
     public void editingTaskItemDueDateFailsWithInvalidIndex(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        int newDueDateYear = 2021;
+
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+
+
+        assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.getTaskItemList().get(2).setDueDateYear(2021));
     }
 
     @Test
@@ -107,12 +133,28 @@ public class TaskListTest {
 
     @Test
     public void editingTaskItemTitleFailsWithInvalidIndex(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        String newTitle = "This is a test";
+
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+        assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.getTaskItemList().get(2).setTitle("This is a test"));
     }
 
     @Test
     public void gettingTaskItemDescriptionFailsWithInvalidIndex(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        String expectedDescription = "Test";
+
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+        assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.getTaskItemList().get(2).getDescription());
     }
 
     @Test
@@ -130,7 +172,15 @@ public class TaskListTest {
 
     @Test
     public void gettingTaskItemDueDateFailsWithInvalidIndex(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        int expectedDueDateYear = 2020;
+
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+        assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.getTaskItemList().get(2).getDueDateYear());
     }
 
     @Test
@@ -148,7 +198,15 @@ public class TaskListTest {
 
     @Test
     public void gettingTaskItemTitleFailsWithInvalidIndex(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        String expectedTitle = "Test";
+
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+        assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.getTaskItemList().get(2).getTitle());
     }
 
     @Test
@@ -189,7 +247,17 @@ public class TaskListTest {
 
     @Test
     public void removingTaskItemsFailsWithInvalidIndex(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        int size = 2;
+
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+        newTaskList.removeItemHardCode(1);
+
+        assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.removeItemHardCode(2));
     }
 
     @Test
@@ -214,7 +282,17 @@ public class TaskListTest {
 
     @Test
     public void uncompletingTaskItemFailsWithInvalidIndex(){
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newTaskList = new TaskList(taskItemList);
 
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+        newTaskList.addItemHardCode("Test", "Test", 2020, 12, 25);
+
+        newTaskList.markCompletedHardCode(0);
+
+        newTaskList.markUncompletedHardCode(0);
+
+        assertThrows(IndexOutOfBoundsException.class, () -> newTaskList.getTaskItemList().get(2).getComplete());
     }
 
 }
