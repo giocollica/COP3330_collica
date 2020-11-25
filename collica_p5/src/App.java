@@ -21,12 +21,58 @@ public class App {
 
     //main method
     public static void main(String[] args) {
-        //call mainMenu method
-        mainMenu();
+        //call applicationMenu method
+        applicationMenu();
     }
 
+    public static void printApplicationMenu(){
+        System.out.println();
+        System.out.println("Select Your Application");
+        System.out.println("_______________________\n");
+        System.out.println("1) task list");
+        System.out.println("2) contact list");
+        System.out.println("3) quit");
+    }
+
+    public static void applicationMenu() {
+        printApplicationMenu();
+
+        Scanner input = new Scanner(System.in);
+        int choice = -1;
+
+        //loop until valid choice is made by the user
+        while (choice < 1 || choice > 3) {
+            boolean continueLoop = true;
+
+            do {
+                try {
+                    String choiceString = input.next();
+                    choice = Integer.parseInt(choiceString);
+                    continueLoop = false;
+                } catch (NumberFormatException numberFormatException) {
+                    System.out.println("You must enter integers. Please try again.");
+                    input.nextLine();
+                }
+            } while (continueLoop);
+
+
+            if (choice == 1) {
+                taskMainMenu();
+            } else if (choice == 2) {
+
+            } else if (choice == 3) {
+                //exit the program
+                System.exit(0);
+            } else {
+                System.out.println("Invalid input Try again");
+                printApplicationMenu();
+            }
+        }
+    }
+
+
     //print out Main Menu for user
-    public static void printMainMenu() {
+    public static void printTaskMainMenu() {
         System.out.println();
         System.out.println("Main Menu");
         System.out.println("_________\n");
@@ -36,8 +82,8 @@ public class App {
     }
 
     //Main Menu logic
-    public static void mainMenu() {
-        printMainMenu();
+    public static void taskMainMenu() {
+        printTaskMainMenu();
 
         Scanner input = new Scanner(System.in);
         int choice = -1;
@@ -64,15 +110,15 @@ public class App {
             if (choice == 1) {
                 //create a new list
                 mainList = createNewList();
-                operationMenu(mainList);
+                taskOperationMenu(mainList);
             } else if (choice == 2) {
                 try {
                     //load an existing list from a file
                     mainList = loadExistingList();
-                    operationMenu(mainList);
+                    taskOperationMenu(mainList);
                 } catch (FileNotFoundException fileNotFoundException) {
                     System.out.println("File was not found");
-                    mainMenu();
+                    taskMainMenu();
                 }
 
             } else if (choice == 3) {
@@ -80,7 +126,7 @@ public class App {
                 System.exit(0);
             } else {
                 System.out.println("Invalid input Try again");
-                printMainMenu();
+                printTaskMainMenu();
             }
         }
     }
@@ -158,7 +204,7 @@ public class App {
     }
 
     //operations menu logic
-    public static void operationMenu(TaskList mainList) {
+    public static void taskOperationMenu(TaskList mainList) {
         Scanner input = new Scanner(System.in);
         int choice = -1;
 
@@ -199,10 +245,10 @@ public class App {
             } else if (choice == 7) {
                 saveToFile(mainList);
             } else if (choice == 8) {
-                mainMenu();
+                taskMainMenu();
             } else {
                 System.out.println("Invalid input Try again");
-                printMainMenu();
+                printTaskMainMenu();
             }
         }
     }
