@@ -109,12 +109,12 @@ public class App {
             if (choice == 1) {
                 //create a new list
                 mainList = createNewContactList();
-                taskOperationMenu(mainList);
+                contactOperationMenu(mainList);
             } else if (choice == 2) {
                 try {
                     //load an existing list from a file
                     mainList = loadExistingTaskList();
-                    taskOperationMenu(mainList);
+                    contactOperationMenu(mainList);
                 } catch (FileNotFoundException fileNotFoundException) {
                     System.out.println("File was not found");
                     taskMainMenu();
@@ -136,7 +136,22 @@ public class App {
         ContactList newList = new ContactList(contactItemList);
         return newList;
     }
-/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //method to load an existing contact list from a file
     public static TaskList loadExistingTaskList() throws FileNotFoundException {
         //take user input on what file to load
@@ -186,7 +201,29 @@ public class App {
 
         return newList;
     }
-    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //print the task operations menu
     public static void printContactOperationMenu() {
@@ -235,7 +272,7 @@ public class App {
                 viewCurrentContactList(mainList);
                 mainList.removeItem();
             } else if (choice == 5) {
-                saveToFileTask(mainList);
+                saveToFileContact(mainList);
             } else if (choice == 6) {
                 taskMainMenu();
             } else {
@@ -255,6 +292,22 @@ public class App {
             System.out.println(i + ") Name: " + mainList.getContactList().get(i).getFirstName() + " " + mainList.getContactList().get(i).getLastName());
             System.out.println("Phone: " + mainList.getContactList().get(i).getPhoneNumber());
             System.out.println("Email: " + mainList.getContactList().get(i).getEmailAddress());
+        }
+    }
+
+    //method to save the task list to a file
+    public static void saveToFileContact(ContactList mainList) {
+        try (FileWriter savedListFile = new FileWriter("savedtasklist.txt")) {
+            PrintWriter printWriter = new PrintWriter(savedListFile);
+            for (int i = 0; mainList.getContactList().size() > i; i++) {
+                printWriter.println(i + ") Name: " + mainList.getContactList().get(i).getFirstName() + " " + mainList.getContactList().get(i).getLastName());
+                printWriter.println("Phone: " + mainList.getContactList().get(i).getPhoneNumber());
+                printWriter.println("Email: " + mainList.getContactList().get(i).getEmailAddress());
+            }
+        } catch (FileNotFoundException fileNotFoundException) {
+            System.out.println("File was not found");
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
         }
     }
 
