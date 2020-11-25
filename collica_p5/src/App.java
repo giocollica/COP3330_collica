@@ -109,12 +109,12 @@ public class App {
 
             if (choice == 1) {
                 //create a new list
-                mainList = createNewList();
+                mainList = createNewTaskList();
                 taskOperationMenu(mainList);
             } else if (choice == 2) {
                 try {
                     //load an existing list from a file
-                    mainList = loadExistingList();
+                    mainList = loadExistingTaskList();
                     taskOperationMenu(mainList);
                 } catch (FileNotFoundException fileNotFoundException) {
                     System.out.println("File was not found");
@@ -132,14 +132,14 @@ public class App {
     }
 
     //method to create a new list
-    public static TaskList createNewList() {
+    public static TaskList createNewTaskList() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newList = new TaskList(taskItemList);
         return newList;
     }
 
     //method to load an existing list from a file
-    public static TaskList loadExistingList() throws FileNotFoundException {
+    public static TaskList loadExistingTaskList() throws FileNotFoundException {
         //take user input on what file to load
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the name of the file to load: ");
@@ -189,7 +189,7 @@ public class App {
     }
 
     //print the operations menu
-    public static void printOperationMenu() {
+    public static void printTaskOperationMenu() {
         System.out.println();
         System.out.println("List Operation Menu");
         System.out.println("___________________\n");
@@ -210,7 +210,7 @@ public class App {
 
         //loop until a valid choice is made
         while (choice != 8) {
-            printOperationMenu();
+            printTaskOperationMenu();
 
             boolean continueLoop = true;
 
@@ -227,14 +227,14 @@ public class App {
 
 
             if (choice == 1) {
-                viewCurrentList(mainList);
+                viewCurrentTaskList(mainList);
             } else if (choice == 2) {
                 mainList.addItem();
             } else if (choice == 3) {
-                viewCurrentList(mainList);
+                viewCurrentTaskList(mainList);
                 mainList.editItem();
             } else if (choice == 4) {
-                viewCurrentList(mainList);
+                viewCurrentTaskList(mainList);
                 mainList.removeItem();
             } else if (choice == 5) {
                 viewUncompleteTasks(mainList);
@@ -243,18 +243,18 @@ public class App {
                 viewCompleteTasks(mainList);
                 mainList.markUncompleted();
             } else if (choice == 7) {
-                saveToFile(mainList);
+                saveToFileTask(mainList);
             } else if (choice == 8) {
                 taskMainMenu();
             } else {
                 System.out.println("Invalid input Try again");
-                printTaskMainMenu();
+                printTaskOperationMenu();
             }
         }
     }
 
     //print out the current list
-    public static void viewCurrentList(TaskList mainList) {
+    public static void viewCurrentTaskList(TaskList mainList) {
         System.out.println();
         System.out.println("Current Tasks");
         System.out.println("_____________");
@@ -311,7 +311,7 @@ public class App {
     }
 
     //method to save the list to a file
-    public static void saveToFile(TaskList mainList) {
+    public static void saveToFileTask(TaskList mainList) {
         try (FileWriter savedListFile = new FileWriter("savedtasklist.txt")) {
             PrintWriter printWriter = new PrintWriter(savedListFile);
             for (int i = 0; mainList.getTaskItemList().size() > i; i++) {
