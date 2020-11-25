@@ -187,6 +187,129 @@ public class App {
         return newList;
     }
     */
+
+    //print the task operations menu
+    public static void printContactOperationMenu() {
+        System.out.println();
+        System.out.println("List Operation Menu");
+        System.out.println("___________________\n");
+        System.out.println("1) view the list");
+        System.out.println("2) add an item");
+        System.out.println("3) edit an item");
+        System.out.println("4) remove an item");
+        System.out.println("5) save the current list");
+        System.out.println("6) quit to the main menu");
+    }
+
+    //operations task menu logic
+    public static void contactOperationMenu(ContactList mainList) {
+        Scanner input = new Scanner(System.in);
+        int choice = -1;
+
+        //loop until a valid choice is made
+        while (choice != 8) {
+            printContactMainMenu();
+
+            boolean continueLoop = true;
+
+            do {
+                try {
+                    String choiceString = input.next();
+                    choice = Integer.parseInt(choiceString);
+                    continueLoop = false;
+                } catch (NumberFormatException numberFormatException) {
+                    System.out.println("You must enter integers. Please try again.");
+                    input.nextLine();
+                }
+            } while (continueLoop);
+
+
+            if (choice == 1) {
+                viewCurrentContactList(mainList);
+            } else if (choice == 2) {
+                mainList.addItem();
+            } else if (choice == 3) {
+                viewCurrentContactList(mainList);
+                mainList.editItem();
+            } else if (choice == 4) {
+                viewCurrentContactList(mainList);
+                mainList.removeItem();
+            } else if (choice == 5) {
+                saveToFileTask(mainList);
+            } else if (choice == 6) {
+                taskMainMenu();
+            } else {
+                System.out.println("Invalid input Try again");
+                printContactOperationMenu();
+            }
+        }
+    }
+
+    //print out the current task list
+    public static void viewCurrentContactList(ContactList mainList) {
+        System.out.println();
+        System.out.println("Current Contacts");
+        System.out.println("________________");
+
+        for (int i = 0; mainList.getContactList().size() > i; i++) {
+            System.out.println(i + ") Name: " + mainList.getContactList().get(i).getFirstName() + " " + mainList.getContactList().get(i).getLastName());
+            System.out.println("Phone: " + mainList.getContactList().get(i).getPhoneNumber());
+            System.out.println("Email: " + mainList.getContactList().get(i).getEmailAddress());
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //print out Task Main Menu for user
     public static void printTaskMainMenu() {
         System.out.println();
