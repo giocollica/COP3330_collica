@@ -70,7 +70,123 @@ public class App {
         }
     }
 
+    //print out Task Main Menu for user
+    public static void printContactMainMenu() {
+        System.out.println();
+        System.out.println("Main Menu");
+        System.out.println("_________\n");
+        System.out.println("1) create a new list");
+        System.out.println("2) load an existing list");
+        System.out.println("3) quit");
+    }
 
+    //Task Main Menu logic
+    public static void contactMainMenu() {
+        printContactMainMenu();
+
+        Scanner input = new Scanner(System.in);
+        int choice = -1;
+
+        ArrayList<ContactItem> contactItemList = new ArrayList<>();
+        ContactList mainList = new ContactList(contactItemList);
+
+        //loop until valid choice is made by the user
+        while (choice < 1 || choice > 3) {
+            boolean continueLoop = true;
+
+            do {
+                try {
+                    String choiceString = input.next();
+                    choice = Integer.parseInt(choiceString);
+                    continueLoop = false;
+                } catch (NumberFormatException numberFormatException) {
+                    System.out.println("You must enter integers. Please try again.");
+                    input.nextLine();
+                }
+            } while (continueLoop);
+
+
+            if (choice == 1) {
+                //create a new list
+                mainList = createNewContactList();
+                taskOperationMenu(mainList);
+            } else if (choice == 2) {
+                try {
+                    //load an existing list from a file
+                    mainList = loadExistingTaskList();
+                    taskOperationMenu(mainList);
+                } catch (FileNotFoundException fileNotFoundException) {
+                    System.out.println("File was not found");
+                    taskMainMenu();
+                }
+
+            } else if (choice == 3) {
+                //exit the program
+                System.exit(0);
+            } else {
+                System.out.println("Invalid input Try again");
+                printContactMainMenu();
+            }
+        }
+    }
+
+    //method to create a new contact list
+    public static ContactList createNewContactList() {
+        ArrayList<ContactItem> contactItemList = new ArrayList<>();
+        ContactList newList = new ContactList(contactItemList);
+        return newList;
+    }
+/*
+    //method to load an existing contact list from a file
+    public static TaskList loadExistingTaskList() throws FileNotFoundException {
+        //take user input on what file to load
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the name of the file to load: ");
+        String textFile = input.nextLine();
+
+        ArrayList<TaskItem> taskItemList = new ArrayList<>();
+        TaskList newList = new TaskList(taskItemList);
+
+        File taskList = new File(textFile);
+
+        Scanner sc = new Scanner(taskList);
+
+        //run through the file to make sure every task is loaded into list
+        while (sc.hasNext()) {
+            String taskNumberRaw = sc.next();
+            char taskNumberString = taskNumberRaw.charAt(0);
+            int taskNumber = Integer.parseInt(String.valueOf(taskNumberString));
+            System.out.println(taskNumber);
+
+            String dueDateRaw = sc.next();
+            String[] dueDateFirstStringArray = dueDateRaw.split("\\[", 2);
+            String dueDateFirstIteration = dueDateFirstStringArray[1];
+
+            String[] dueDateSecondStringArray = dueDateFirstIteration.split("-", 5);
+            String dueDateSecondIteration = dueDateSecondStringArray[2];
+
+            String dueDateYearString = dueDateSecondStringArray[0];
+            int dueDateYear = Integer.parseInt(dueDateYearString);
+
+            String dueDateMonthString = dueDateSecondStringArray[1];
+            int dueDateMonth = Integer.parseInt(dueDateMonthString);
+
+            String[] dueDateThirdStringArray = dueDateSecondIteration.split("\\]", 2);
+            String dueDateDayString = dueDateThirdStringArray[0];
+            int dueDateDay = Integer.parseInt(dueDateDayString);
+
+            String titleRaw = sc.next();
+            String[] titleStringArray = titleRaw.split(":", 2);
+            String title = titleStringArray[0];
+
+            String description = sc.next();
+
+            newList.addItemHardCode(title, description, dueDateYear, dueDateMonth, dueDateDay);
+        }
+
+        return newList;
+    }
+    */
     //print out Task Main Menu for user
     public static void printTaskMainMenu() {
         System.out.println();
