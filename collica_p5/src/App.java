@@ -71,7 +71,7 @@ public class App {
     }
 
 
-    //print out Main Menu for user
+    //print out Task Main Menu for user
     public static void printTaskMainMenu() {
         System.out.println();
         System.out.println("Main Menu");
@@ -81,7 +81,7 @@ public class App {
         System.out.println("3) quit");
     }
 
-    //Main Menu logic
+    //Task Main Menu logic
     public static void taskMainMenu() {
         printTaskMainMenu();
 
@@ -131,14 +131,14 @@ public class App {
         }
     }
 
-    //method to create a new list
+    //method to create a new task list
     public static TaskList createNewTaskList() {
         ArrayList<TaskItem> taskItemList = new ArrayList<>();
         TaskList newList = new TaskList(taskItemList);
         return newList;
     }
 
-    //method to load an existing list from a file
+    //method to load an existing task list from a file
     public static TaskList loadExistingTaskList() throws FileNotFoundException {
         //take user input on what file to load
         Scanner input = new Scanner(System.in);
@@ -188,7 +188,7 @@ public class App {
         return newList;
     }
 
-    //print the operations menu
+    //print the task operations menu
     public static void printTaskOperationMenu() {
         System.out.println();
         System.out.println("List Operation Menu");
@@ -203,7 +203,7 @@ public class App {
         System.out.println("8) quit to the main menu");
     }
 
-    //operations menu logic
+    //operations task menu logic
     public static void taskOperationMenu(TaskList mainList) {
         Scanner input = new Scanner(System.in);
         int choice = -1;
@@ -253,7 +253,7 @@ public class App {
         }
     }
 
-    //print out the current list
+    //print out the current task list
     public static void viewCurrentTaskList(TaskList mainList) {
         System.out.println();
         System.out.println("Current Tasks");
@@ -310,7 +310,7 @@ public class App {
         }
     }
 
-    //method to save the list to a file
+    //method to save the task list to a file
     public static void saveToFileTask(TaskList mainList) {
         try (FileWriter savedListFile = new FileWriter("savedtasklist.txt")) {
             PrintWriter printWriter = new PrintWriter(savedListFile);
