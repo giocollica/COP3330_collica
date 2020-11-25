@@ -30,8 +30,8 @@ public class ContactList {
                 newItem.setLastName(newLastName);
 
                 System.out.print("Phone number (XXXXXXXXXX): ");
-                int newPhoneNumber = input.nextInt();
-                newItem.setPhoneNumber(newPhoneNumber);
+                String newPhoneNumber = input.next();
+                newItem.setPhoneNumber(Integer.parseInt(newPhoneNumber));
 
                 System.out.print("Email address (x@y.z): ");
                 String newEmailAddress = input.next();

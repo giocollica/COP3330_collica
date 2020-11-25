@@ -59,7 +59,7 @@ public class App {
             if (choice == 1) {
                 taskMainMenu();
             } else if (choice == 2) {
-
+                contactMainMenu();
             } else if (choice == 3) {
                 //exit the program
                 System.exit(0);
@@ -113,7 +113,7 @@ public class App {
             } else if (choice == 2) {
                 try {
                     //load an existing list from a file
-                    mainList = loadExistingTaskList();
+                    mainList = loadExistingContactList();
                     contactOperationMenu(mainList);
                 } catch (FileNotFoundException fileNotFoundException) {
                     System.out.println("File was not found");
@@ -153,14 +153,14 @@ public class App {
 
 
     //method to load an existing contact list from a file
-    public static TaskList loadExistingTaskList() throws FileNotFoundException {
+    public static ContactList loadExistingContactList() throws FileNotFoundException {
         //take user input on what file to load
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the name of the file to load: ");
         String textFile = input.nextLine();
 
-        ArrayList<TaskItem> taskItemList = new ArrayList<>();
-        TaskList newList = new TaskList(taskItemList);
+        ArrayList<ContactItem> contactItemList = new ArrayList<>();
+        ContactList newList = new ContactList(contactItemList);
 
         File taskList = new File(textFile);
 
@@ -173,10 +173,12 @@ public class App {
             int taskNumber = Integer.parseInt(String.valueOf(taskNumberString));
             System.out.println(taskNumber);
 
-            String dueDateRaw = sc.next();
-            String[] dueDateFirstStringArray = dueDateRaw.split("\\[", 2);
-            String dueDateFirstIteration = dueDateFirstStringArray[1];
+            String nameRaw = sc.next();
+            String[] nameStringArray = nameRaw.split(":", 2);
+            String nameString = nameStringArray[1];
 
+            System.out.println(nameString);
+            /*
             String[] dueDateSecondStringArray = dueDateFirstIteration.split("-", 5);
             String dueDateSecondIteration = dueDateSecondStringArray[2];
 
@@ -189,7 +191,10 @@ public class App {
             String[] dueDateThirdStringArray = dueDateSecondIteration.split("\\]", 2);
             String dueDateDayString = dueDateThirdStringArray[0];
             int dueDateDay = Integer.parseInt(dueDateDayString);
+             */
 
+
+            /*
             String titleRaw = sc.next();
             String[] titleStringArray = titleRaw.split(":", 2);
             String title = titleStringArray[0];
@@ -197,6 +202,8 @@ public class App {
             String description = sc.next();
 
             newList.addItemHardCode(title, description, dueDateYear, dueDateMonth, dueDateDay);
+
+             */
         }
 
         return newList;
@@ -245,7 +252,7 @@ public class App {
 
         //loop until a valid choice is made
         while (choice != 8) {
-            printContactMainMenu();
+            printContactOperationMenu();
 
             boolean continueLoop = true;
 
@@ -297,7 +304,7 @@ public class App {
 
     //method to save the task list to a file
     public static void saveToFileContact(ContactList mainList) {
-        try (FileWriter savedListFile = new FileWriter("savedtasklist.txt")) {
+        try (FileWriter savedListFile = new FileWriter("savedcontactlist.txt")) {
             PrintWriter printWriter = new PrintWriter(savedListFile);
             for (int i = 0; mainList.getContactList().size() > i; i++) {
                 printWriter.println(i + ") Name: " + mainList.getContactList().get(i).getFirstName() + " " + mainList.getContactList().get(i).getLastName());
