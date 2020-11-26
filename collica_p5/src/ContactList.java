@@ -106,6 +106,7 @@ public class ContactList {
         while (continueLoop) {
             try {
                 Scanner input = new Scanner(System.in);
+                Scanner inputSecond = new Scanner(System.in);
 
                 System.out.println();
 
@@ -113,7 +114,7 @@ public class ContactList {
                 int contactToEdit = input.nextInt();
 
                 System.out.println("Enter a new first name for contact " + contactToEdit + ":");
-                String newFirstName = input.nextLine();
+                String newFirstName = inputSecond.nextLine();
                 this.contactList.get(contactToEdit).setFirstName(newFirstName);
 
                 System.out.println("Enter a new last name for contact " + contactToEdit + ":");
@@ -121,7 +122,7 @@ public class ContactList {
                 this.contactList.get(contactToEdit).setLastName(newLastName);
 
                 System.out.println("Enter a new phone number (XXXXXXXXXX) for contact " + contactToEdit + ":");
-                int newPhoneNumber = input.nextInt();
+                long newPhoneNumber = inputSecond.nextLong();
                 this.contactList.get(contactToEdit).setPhoneNumber(newPhoneNumber);
 
                 System.out.println("Enter a new email address (x@y.z) for contact " + contactToEdit + ":");

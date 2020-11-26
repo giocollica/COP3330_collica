@@ -271,7 +271,7 @@ public class App {
             ioException.printStackTrace();
         }
     }
-    
+
     //print out Task Main Menu for user
     public static void printTaskMainMenu() {
         System.out.println();
