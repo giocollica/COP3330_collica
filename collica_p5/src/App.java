@@ -1,6 +1,6 @@
 /*
     Giovanni Collica
-    Programming Assignment 4
+    Programming Assignment 5
     COP 3330
 
     This java class is designed to be
@@ -25,6 +25,7 @@ public class App {
         applicationMenu();
     }
 
+    //method to print out the application menu
     public static void printApplicationMenu(){
         System.out.println();
         System.out.println("Select Your Application");
@@ -34,6 +35,7 @@ public class App {
         System.out.println("3) quit");
     }
 
+    //method for application menu logic
     public static void applicationMenu() {
         printApplicationMenu();
 
@@ -70,7 +72,7 @@ public class App {
         }
     }
 
-    //print out Task Main Menu for user
+    //print out Contact Main Menu for user
     public static void printContactMainMenu() {
         System.out.println();
         System.out.println("Main Menu");
@@ -80,7 +82,7 @@ public class App {
         System.out.println("3) quit");
     }
 
-    //Task Main Menu logic
+    //Contact Main Menu logic
     public static void contactMainMenu() {
         printContactMainMenu();
 
@@ -186,7 +188,7 @@ public class App {
         return newList;
     }
 
-    //print the task operations menu
+    //print the contact operations menu
     public static void printContactOperationMenu() {
         System.out.println();
         System.out.println("List Operation Menu");
@@ -199,7 +201,7 @@ public class App {
         System.out.println("6) quit to the main menu");
     }
 
-    //operations task menu logic
+    //operations contact menu logic
     public static void contactOperationMenu(ContactList mainList) {
         Scanner input = new Scanner(System.in);
         int choice = -1;
@@ -243,7 +245,7 @@ public class App {
         }
     }
 
-    //print out the current task list
+    //print out the current contact list
     public static void viewCurrentContactList(ContactList mainList) {
         System.out.println();
         System.out.println("Current Contacts");
@@ -256,7 +258,7 @@ public class App {
         }
     }
 
-    //method to save the task list to a file
+    //method to save the contact list to a file
     public static void saveToFileContact(ContactList mainList) {
         try (FileWriter savedListFile = new FileWriter("savedcontactlist.txt")) {
             PrintWriter printWriter = new PrintWriter(savedListFile);

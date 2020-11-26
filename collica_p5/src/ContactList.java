@@ -1,9 +1,19 @@
+/*
+    Giovanni Collica
+    Programming Assignment 5
+    COP 3330
+
+    This java class contains the constructor
+    and necessary methods for ContactList
+ */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ContactList {
     private ArrayList<ContactItem> contactList = new ArrayList<>();
 
+    //constructor
     public ContactList(ArrayList<ContactItem> contactList) {
         this.contactList = contactList;
     }

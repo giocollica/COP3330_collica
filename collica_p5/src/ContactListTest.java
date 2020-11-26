@@ -1,3 +1,13 @@
+/*
+    Giovanni Collica
+    Programming Assignment 5
+    COP 3330
+
+    This java class contains all the
+    tests provided by the assignment
+    to ensure that the code is working.
+ */
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

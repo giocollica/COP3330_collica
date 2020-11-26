@@ -1,6 +1,6 @@
 /*
     Giovanni Collica
-    Programming Assignment 4
+    Programming Assignment 5
     COP 3330
 
     This java class contains the constructor
