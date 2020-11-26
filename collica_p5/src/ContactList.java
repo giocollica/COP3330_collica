@@ -48,7 +48,7 @@ public class ContactList {
     }
 
     //method to add item to the contactlist for testing purposes
-    public void addItemHardCode(String firstName, String lastName, int phoneNumber, String emailAddress) {
+    public void addItemHardCode(String firstName, String lastName, long phoneNumber, String emailAddress) {
         boolean continueLoop = true;
 
         //loop to ensure that valid input is given

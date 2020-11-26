@@ -173,39 +173,29 @@ public class App {
             int taskNumber = Integer.parseInt(String.valueOf(taskNumberString));
             System.out.println(taskNumber);
 
-            String nameRaw = sc.next();
-            String[] nameStringArray = nameRaw.split(":", 2);
-            String firstName = nameStringArray[0];
-            String lastName = nameStringArray[1];
+            //skip over Name:
+            sc.next();
+
+            String firstName = sc.next();
+            String lastName = sc.next();
 
             System.out.println(firstName);
             System.out.println(lastName);
-            /*
-            String[] dueDateSecondStringArray = dueDateFirstIteration.split("-", 5);
-            String dueDateSecondIteration = dueDateSecondStringArray[2];
 
-            String dueDateYearString = dueDateSecondStringArray[0];
-            int dueDateYear = Integer.parseInt(dueDateYearString);
+            //skip over Phone:
+            sc.next();
 
-            String dueDateMonthString = dueDateSecondStringArray[1];
-            int dueDateMonth = Integer.parseInt(dueDateMonthString);
+            String numberString = sc.next();
+            long phoneNumber = Long.parseLong(numberString);
 
-            String[] dueDateThirdStringArray = dueDateSecondIteration.split("\\]", 2);
-            String dueDateDayString = dueDateThirdStringArray[0];
-            int dueDateDay = Integer.parseInt(dueDateDayString);
-             */
+            //skip over Email:
+            sc.next();
+
+            String email = sc.next();
+
+            newList.addItemHardCode(firstName, lastName, phoneNumber, email);
 
 
-            /*
-            String titleRaw = sc.next();
-            String[] titleStringArray = titleRaw.split(":", 2);
-            String title = titleStringArray[0];
-
-            String description = sc.next();
-
-            newList.addItemHardCode(title, description, dueDateYear, dueDateMonth, dueDateDay);
-
-             */
         }
 
         return newList;
