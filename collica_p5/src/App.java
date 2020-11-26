@@ -137,21 +137,6 @@ public class App {
         return newList;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //method to load an existing contact list from a file
     public static ContactList loadExistingContactList() throws FileNotFoundException {
         //take user input on what file to load
@@ -200,29 +185,6 @@ public class App {
 
         return newList;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //print the task operations menu
     public static void printContactOperationMenu() {
@@ -309,59 +271,7 @@ public class App {
             ioException.printStackTrace();
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     //print out Task Main Menu for user
     public static void printTaskMainMenu() {
         System.out.println();
