@@ -260,7 +260,12 @@ public class App {
 
     //method to save the contact list to a file
     public static void saveToFileContact(ContactList mainList) {
-        try (FileWriter savedListFile = new FileWriter("savedcontactlist.txt")) {
+        System.out.println("Enter the filename to save as: ");
+
+        Scanner input = new Scanner(System.in);
+        String fileName = input.nextLine();
+
+        try (FileWriter savedListFile = new FileWriter(fileName)) {
             PrintWriter printWriter = new PrintWriter(savedListFile);
             for (int i = 0; mainList.getContactList().size() > i; i++) {
                 printWriter.println(i + ") Name: " + mainList.getContactList().get(i).getFirstName() + " " + mainList.getContactList().get(i).getLastName());
@@ -515,7 +520,12 @@ public class App {
 
     //method to save the task list to a file
     public static void saveToFileTask(TaskList mainList) {
-        try (FileWriter savedListFile = new FileWriter("savedtasklist.txt")) {
+        System.out.println("Enter the filename to save as: ");
+
+        Scanner input = new Scanner(System.in);
+        String fileName = input.nextLine();
+
+        try (FileWriter savedListFile = new FileWriter(fileName)) {
             PrintWriter printWriter = new PrintWriter(savedListFile);
             for (int i = 0; mainList.getTaskItemList().size() > i; i++) {
                 printWriter.println(i + ")" + "  " + "[" + mainList.getTaskItemList().get(i).getDueDateYear() + "-"
