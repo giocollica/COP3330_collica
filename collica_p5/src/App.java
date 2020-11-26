@@ -326,7 +326,7 @@ public class App {
 
             } else if (choice == 3) {
                 //exit the program
-                System.exit(0);
+                applicationMenu();
             } else {
                 System.out.println("Invalid input Try again");
                 printTaskMainMenu();
