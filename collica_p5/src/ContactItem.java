@@ -1,10 +1,10 @@
 public class ContactItem {
     private String firstName;
     private String lastName;
-    private int phoneNumber;
+    private long phoneNumber;
     private String emailAddress;
 
-    public ContactItem(String firstName, String lastName, int phoneNumber, String emailAddress){
+    public ContactItem(String firstName, String lastName, long phoneNumber, String emailAddress){
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -27,11 +27,11 @@ public class ContactItem {
         this.lastName = lastName;
     }
 
-    public int getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

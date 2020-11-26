@@ -117,12 +117,12 @@ public class App {
                     contactOperationMenu(mainList);
                 } catch (FileNotFoundException fileNotFoundException) {
                     System.out.println("File was not found");
-                    taskMainMenu();
+                    contactMainMenu();
                 }
 
             } else if (choice == 3) {
                 //exit the program
-                System.exit(0);
+                applicationMenu();
             } else {
                 System.out.println("Invalid input Try again");
                 printContactMainMenu();
@@ -162,9 +162,9 @@ public class App {
         ArrayList<ContactItem> contactItemList = new ArrayList<>();
         ContactList newList = new ContactList(contactItemList);
 
-        File taskList = new File(textFile);
+        File contactList = new File(textFile);
 
-        Scanner sc = new Scanner(taskList);
+        Scanner sc = new Scanner(contactList);
 
         //run through the file to make sure every task is loaded into list
         while (sc.hasNext()) {
@@ -175,9 +175,11 @@ public class App {
 
             String nameRaw = sc.next();
             String[] nameStringArray = nameRaw.split(":", 2);
-            String nameString = nameStringArray[1];
+            String firstName = nameStringArray[0];
+            String lastName = nameStringArray[1];
 
-            System.out.println(nameString);
+            System.out.println(firstName);
+            System.out.println(lastName);
             /*
             String[] dueDateSecondStringArray = dueDateFirstIteration.split("-", 5);
             String dueDateSecondIteration = dueDateSecondStringArray[2];

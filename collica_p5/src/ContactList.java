@@ -17,6 +17,7 @@ public class ContactList {
         while (continueLoop) {
             try {
                 Scanner input = new Scanner(System.in);
+                Scanner inputInt = new Scanner(System.in);
                 ContactItem newItem = new ContactItem("null", "null", 1111111111, "email@email.com");
 
                 System.out.println();
@@ -30,8 +31,8 @@ public class ContactList {
                 newItem.setLastName(newLastName);
 
                 System.out.print("Phone number (XXXXXXXXXX): ");
-                String newPhoneNumber = input.next();
-                newItem.setPhoneNumber(Integer.parseInt(newPhoneNumber));
+                long newPhoneNumber = inputInt.nextLong();
+                newItem.setPhoneNumber(newPhoneNumber);
 
                 System.out.print("Email address (x@y.z): ");
                 String newEmailAddress = input.next();
